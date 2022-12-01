@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>cmake external 外部项目设置 runtime 路径 | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
+ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
+后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
+配置 目录结构 代码 顶层 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main.">
+    <meta name="generator" content="Hugo 0.104.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="cmake external 外部项目设置 runtime 路径" />
+<meta property="og:description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
+ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
+后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
+配置 目录结构 代码 顶层 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://coderfamer.github.io/posts/software/spdlog/external_runtime/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-03-06T23:07:32+00:00" />
+<meta property="article:modified_time" content="2022-03-06T23:07:32+00:00" />
+
+<meta itemprop="name" content="cmake external 外部项目设置 runtime 路径">
+<meta itemprop="description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
+ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
+后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
+配置 目录结构 代码 顶层 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main."><meta itemprop="datePublished" content="2022-03-06T23:07:32+00:00" />
+<meta itemprop="dateModified" content="2022-03-06T23:07:32+00:00" />
+<meta itemprop="wordCount" content="120">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="cmake external 外部项目设置 runtime 路径"/>
+<meta name="twitter:description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
+ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
+后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
+配置 目录结构 代码 顶层 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">cmake external 外部项目设置 runtime 路径</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-03-06T23:07:32Z">March 6, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="cmake-external-外部项目超级构建设置-runtime-路径">cmake external 外部项目超级构建设置 runtime 路径</h1>
+<h2 id="简介">简介</h2>
+<p>在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。</p>
+<p>ExternalProject_Add  参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。</p>
+<p>后参阅 cmake 文档，发现 ExternalProject_Add  中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径</p>
+<h2 id="配置">配置</h2>
+<h3 id="目录结构">目录结构</h3>
+<p><img src="J:%5C01_note%5C00_hugo_blog%5Cimages%5Cspdlog_runtime_tree.png" alt=""></p>
+<h3 id="代码">代码</h3>
+<p>顶层 CMakeLists.txt 内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.5</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>project(<span style="color:#e6db74">demo</span> <span style="color:#e6db74">LANGUAGES</span> <span style="color:#e6db74">CXX</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set_property(<span style="color:#e6db74">DIRECTORY</span> <span style="color:#e6db74">PROPERTY</span> <span style="color:#e6db74">EP_BASE</span> <span style="color:#f92672">${</span>CMAKE_BINARY_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/subprojects</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set(<span style="color:#e6db74">STAGED_INSTALL_PREFIX</span> <span style="color:#f92672">${</span>CMAKE_BINARY_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/stage</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>include(<span style="color:#e6db74">ExternalProject</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>ExternalProject_Add( <span style="color:#e6db74">log</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">SOURCE_DIR</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">${</span>CMAKE_CURRENT_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/src</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">CMAKE_ARGS</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">-DRUNTIME_OUTPUT_DIRECTORY=</span><span style="color:#f92672">${</span>PROJECT_SOURCE_DIR<span style="color:#f92672">}</span><span style="color:#e6db74">/run</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">BUILD_ALWAYS</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">INSTALL_COMMAND</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>CMAKE_ARGS 添加 runtime 参数
+src 目录中 CMakeLists.txt 内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.5</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>project(<span style="color:#e6db74">demo_core</span> <span style="color:#e6db74">LANGUAGES</span> <span style="color:#e6db74">CXX</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>add_executable(<span style="color:#e6db74">core</span> <span style="color:#e6db74">main.cpp</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>message(<span style="color:#e6db74">&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;</span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span>set_target_properties(<span style="color:#e6db74">core</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">PROPERTIES</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">RUNTIME_OUTPUT_DIRECTORY</span> <span style="color:#e6db74">&#34;${RUNTIME_OUTPUT_DIRECTORY}&#34;</span>
+</span></span><span style="display:flex;"><span>)<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>main.cpp</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;hello!!!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>构建</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir  build <span style="color:#f92672">&amp;&amp;</span> cd build
+</span></span><span style="display:flex;"><span>cmake ..
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><p><img src="J:%5C01_note%5C00_hugo_blog%5Cimages%5Cspdlog_runtime_build.png" alt=""></p>
+<h3 id="产出目录结构和运行">产出目录结构和运行</h3>
+<p><img src="J:%5C01_note%5C00_hugo_blog%5Cimages%5Cspdlog_runtime_run.png" alt=""></p>
+<h2 id="引用">引用</h2>
+<p><a href="https://cmake.org/cmake/help/v3.23/module/ExternalProject.html#id3">ExternalProject — CMake 3.23.0-rc2 Documentation</a></p>
+<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#runtime-output-artifacts">cmake-buildsystem(7) — CMake 3.23.0-rc2 Documentation</a></p>
+<p><a href="https://stackoverflow.com/questions/34011381/cmake-set-cmake-runtime-output-directory-for-a-specific-target-only">CMake set CMAKE_RUNTIME_OUTPUT_DIRECTORY for a specific target only - Stack Overflow</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://coderfamer.github.io/" >
+    &copy;  My New Hugo Site 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

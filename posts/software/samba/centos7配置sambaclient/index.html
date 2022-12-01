@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>centos 7 配置 samba client | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Samba - 如何配置 samba 客户端 SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。 本文介绍 centos 7 如何访问 smb 服务器的共享目录
+安装 samba 软件 yum -y install samba samba-client cifs-utils 注意: 推荐安装 samba 软件
+创建挂载目录
+mkdir -p /mnt/projects 确认是否能够连接到服务器，以及可以访问的共享目录
+# sambalicent -L //samba-server -U samba-username smbclient -L //samba-server -U samba Enter SAMBA\samba_user1&#39;s password: Domain=[LOCALHOST] OS=[Windows 6.1] Server=[Samba 4.6.2] Sharename Type Comment --------- ---- ------- homes Disk Home Directories print$ Disk Printer Drivers shared Disk Shared Directories projects Disk Shared Directories IPC$ IPC IPC Service (Samba server samba-storage) samba Disk Home Directories Domain=[LOCALHOST] OS=[Windows 6.">
+    <meta name="generator" content="Hugo 0.104.3" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="centos 7 配置 samba client" />
+<meta property="og:description" content="Samba - 如何配置 samba 客户端 SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。 本文介绍 centos 7 如何访问 smb 服务器的共享目录
+安装 samba 软件 yum -y install samba samba-client cifs-utils 注意: 推荐安装 samba 软件
+创建挂载目录
+mkdir -p /mnt/projects 确认是否能够连接到服务器，以及可以访问的共享目录
+# sambalicent -L //samba-server -U samba-username smbclient -L //samba-server -U samba Enter SAMBA\samba_user1&#39;s password: Domain=[LOCALHOST] OS=[Windows 6.1] Server=[Samba 4.6.2] Sharename Type Comment --------- ---- ------- homes Disk Home Directories print$ Disk Printer Drivers shared Disk Shared Directories projects Disk Shared Directories IPC$ IPC IPC Service (Samba server samba-storage) samba Disk Home Directories Domain=[LOCALHOST] OS=[Windows 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://coderfamer.github.io/posts/software/samba/centos7%E9%85%8D%E7%BD%AEsambaclient/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-26T16:07:32+00:00" />
+<meta property="article:modified_time" content="2021-08-26T16:07:32+00:00" />
+
+<meta itemprop="name" content="centos 7 配置 samba client">
+<meta itemprop="description" content="Samba - 如何配置 samba 客户端 SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。 本文介绍 centos 7 如何访问 smb 服务器的共享目录
+安装 samba 软件 yum -y install samba samba-client cifs-utils 注意: 推荐安装 samba 软件
+创建挂载目录
+mkdir -p /mnt/projects 确认是否能够连接到服务器，以及可以访问的共享目录
+# sambalicent -L //samba-server -U samba-username smbclient -L //samba-server -U samba Enter SAMBA\samba_user1&#39;s password: Domain=[LOCALHOST] OS=[Windows 6.1] Server=[Samba 4.6.2] Sharename Type Comment --------- ---- ------- homes Disk Home Directories print$ Disk Printer Drivers shared Disk Shared Directories projects Disk Shared Directories IPC$ IPC IPC Service (Samba server samba-storage) samba Disk Home Directories Domain=[LOCALHOST] OS=[Windows 6."><meta itemprop="datePublished" content="2021-08-26T16:07:32+00:00" />
+<meta itemprop="dateModified" content="2021-08-26T16:07:32+00:00" />
+<meta itemprop="wordCount" content="144">
+<meta itemprop="keywords" content="samba," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="centos 7 配置 samba client"/>
+<meta name="twitter:description" content="Samba - 如何配置 samba 客户端 SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。 本文介绍 centos 7 如何访问 smb 服务器的共享目录
+安装 samba 软件 yum -y install samba samba-client cifs-utils 注意: 推荐安装 samba 软件
+创建挂载目录
+mkdir -p /mnt/projects 确认是否能够连接到服务器，以及可以访问的共享目录
+# sambalicent -L //samba-server -U samba-username smbclient -L //samba-server -U samba Enter SAMBA\samba_user1&#39;s password: Domain=[LOCALHOST] OS=[Windows 6.1] Server=[Samba 4.6.2] Sharename Type Comment --------- ---- ------- homes Disk Home Directories print$ Disk Printer Drivers shared Disk Shared Directories projects Disk Shared Directories IPC$ IPC IPC Service (Samba server samba-storage) samba Disk Home Directories Domain=[LOCALHOST] OS=[Windows 6."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">centos 7 配置 samba client</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-08-26T16:07:32Z">August 26, 2021</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="samba---如何配置-samba-客户端">Samba - 如何配置 samba 客户端</h1>
+<hr>
+<p>SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。
+本文介绍 centos 7 如何访问 smb 服务器的共享目录</p>
+<h2 id="安装-samba-软件">安装 samba 软件</h2>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum -y install samba samba-client cifs-utils
+</span></span></code></pre></div><p>注意: 推荐安装 samba 软件</p>
+<p>创建挂载目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir -p /mnt/projects
+</span></span></code></pre></div><p>确认是否能够连接到服务器，以及可以访问的共享目录</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># sambalicent -L //samba-server  -U samba-username</span>
+</span></span><span style="display:flex;"><span>smbclient -L //samba-server -U samba
+</span></span><span style="display:flex;"><span>Enter SAMBA<span style="color:#ae81ff">\s</span>amba_user1<span style="color:#960050;background-color:#1e0010">&#39;</span>s password:
+</span></span><span style="display:flex;"><span>Domain<span style="color:#f92672">=[</span>LOCALHOST<span style="color:#f92672">]</span> OS<span style="color:#f92672">=[</span>Windows 6.1<span style="color:#f92672">]</span> Server<span style="color:#f92672">=[</span>Samba 4.6.2<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Sharename       Type      Comment
+</span></span><span style="display:flex;"><span>	---------       ----      -------
+</span></span><span style="display:flex;"><span>    homes           Disk      Home Directories
+</span></span><span style="display:flex;"><span>	print$          Disk      Printer Drivers
+</span></span><span style="display:flex;"><span>	shared          Disk      Shared Directories
+</span></span><span style="display:flex;"><span>    projects        Disk      Shared Directories
+</span></span><span style="display:flex;"><span>	IPC$            IPC       IPC Service <span style="color:#f92672">(</span>Samba server samba-storage<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>	samba           Disk      Home Directories
+</span></span><span style="display:flex;"><span>Domain<span style="color:#f92672">=[</span>LOCALHOST<span style="color:#f92672">]</span> OS<span style="color:#f92672">=[</span>Windows 6.1<span style="color:#f92672">]</span> Server<span style="color:#f92672">=[</span>Samba 4.6.2<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Server               Comment
+</span></span><span style="display:flex;"><span>	---------            -------
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Workgroup            Master
+</span></span><span style="display:flex;"><span>	---------            -------
+</span></span><span style="display:flex;"><span>    SAMBA                LOCALHOST
+</span></span></code></pre></div><p>手动挂载测试</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mount -t cifs -o user<span style="color:#f92672">=</span>samba-username,password<span style="color:#f92672">=</span>pw123  //samba-server/projects /mnt/projects
+</span></span></code></pre></div><p>挂载成功之后，使用 <strong>df -h</strong> 命令可查看目录映射
+解挂命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>unmount /mnt/projects
+</span></span></code></pre></div><p>添加开机自动挂载
+在 <strong>/etc/fstab</strong> 文件里面添加类似命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>//samba-server/projects /mnt/projects cifs username<span style="color:#f92672">=</span>samba,password<span style="color:#f92672">=</span>pw123,soft,rw <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>测试</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mount -a
+</span></span></code></pre></div><h2 id="参考文档">参考文档</h2>
+<p><a href="https://codingbee.net/rhcsa/samba-how-to-set-up-a-samba-client-on-centos-rhel-7">Samba – How to set up a Samba client on CentOS/RHEL 7</a></p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/samba/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">samba</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/software/samba/xyplorer%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AEsamba/">xyplorer 访问 samba 时候拒绝访问</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://coderfamer.github.io/" >
+    &copy;  My New Hugo Site 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

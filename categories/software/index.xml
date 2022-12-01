@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>software on My New Hugo Site</title>
+    <link>https://coderfamer.github.io/categories/software/</link>
+    <description>Recent content in software on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Nov 2021 20:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/categories/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>常用软件清单</title>
+      <link>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+      <pubDate>Tue, 02 Nov 2021 20:07:32 +0000</pubDate>
+      
+      <guid>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+      <description>文件浏览器 xyplorer directory opus total comman</description>
+    </item>
+    
+    <item>
+      <title>centos 7 配置 samba client</title>
+      <link>https://coderfamer.github.io/posts/software/samba/centos7%E9%85%8D%E7%BD%AEsambaclient/</link>
+      <pubDate>Thu, 26 Aug 2021 16:07:32 +0000</pubDate>
+      
+      <guid>https://coderfamer.github.io/posts/software/samba/centos7%E9%85%8D%E7%BD%AEsambaclient/</guid>
+      <description>Samba - 如何配置 samba 客户端 SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。 本文介绍 centos 7 如何访问 smb 服务器的共享目录
+安装 samba 软件 yum -y install samba samba-client cifs-utils 注意: 推荐安装 samba 软件
+创建挂载目录
+mkdir -p /mnt/projects 确认是否能够连接到服务器，以及可以访问的共享目录
+# sambalicent -L //samba-server -U samba-username smbclient -L //samba-server -U samba Enter SAMBA\samba_user1&amp;#39;s password: Domain=[LOCALHOST] OS=[Windows 6.1] Server=[Samba 4.6.2] Sharename Type Comment --------- ---- ------- homes Disk Home Directories print$ Disk Printer Drivers shared Disk Shared Directories projects Disk Shared Directories IPC$ IPC IPC Service (Samba server samba-storage) samba Disk Home Directories Domain=[LOCALHOST] OS=[Windows 6.</description>
+    </item>
+    
+    <item>
+      <title>wireguard 配置</title>
+      <link>https://coderfamer.github.io/posts/software/wireguard/command/</link>
+      <pubDate>Thu, 06 May 2021 20:07:32 +0000</pubDate>
+      
+      <guid>https://coderfamer.github.io/posts/software/wireguard/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xyplorer 访问 samba 时候拒绝访问</title>
+      <link>https://coderfamer.github.io/posts/software/samba/xyplorer%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AEsamba/</link>
+      <pubDate>Thu, 06 May 2021 20:07:32 +0000</pubDate>
+      
+      <guid>https://coderfamer.github.io/posts/software/samba/xyplorer%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AEsamba/</guid>
+      <description>xyplorer 访问 samba 时候拒绝访问 问题 Ubuntu 配置好 samba 之后，自带文件管理器可以访问 samba 共享目录，但是用 xyplorer 访问时候， xyplorer 提示拒绝访问
+原因 本地文件管理器在访问 samba 共享目录时候会提示输入账户名密码，而 xyplorer 不会与自带文件管理器同步密码，所以导致拒绝访问
+解决办法 只需要在 xyplorer 中做个网络映射即可
+操作步骤 Tools -&amp;gt; 特殊工具 -&amp;gt; 映射网络驱动器 任选一个盘符之后，输入 samba 创建的账户名即可</description>
+    </item>
+    
+  </channel>
+</rss>
