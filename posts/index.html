@@ -126,7 +126,202 @@ rm -rf public git submodule add -b master git@github.com:&lt;yourgitname&gt;/&lt
 
         </div>
       
-    </section></article>
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/kubernetes/00_k8s-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="link black dim">
+        centos7 离线安装 kubernets (k8s)
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      centos 7 离线安装 kubernets (k8s) 下载离线安装包 准备一个可以连接外网的 centos7 机器，机器做好快照。
+准备 安装必要程序
+yum install yum-utils 生成docker 安装包 因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker
+更新 docker 源 yum install -y epel-release.noarch yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 导出并安装 导出 docker 安装包和其依赖包
+mkdir docker &amp;&amp; cd docker yumdownloader --resolve docker ce 安装并启动 docker
+yum install -y docker-ce systemctl start docker systemctl enable docker &amp;&amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.repos.d/kubernets.repo
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/kubernetes/01_k8s%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90token/" class="link black dim">
+        centos7 离线安装 kubernets (k8s)
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      k8s 重新生成 token k8s 安装之后会自动生成一个有效期为 24h 的 token，超时之后就需要重新生成新的 token
+方法 生成 token
+kubeadm token create 获取ca证书 hash 值
+openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2&gt;/dev/null | openssl dgst -sha256 -hex | sed &#39;s/^.* //&#39; ** 查看 token **
+kubeadm token list 上述步骤完成之后就可以添加新的 node 节点到 master 了
+kubeadm join &lt;master_ip&gt;:6443 --token &lt;TOKEN&gt; --discovery-token-ca-cert-hash share256:&lt;HASH&gt; 
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/samba/windows-samba-%E6%B8%85%E9%99%A4%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/" class="link black dim">
+        windows 清除 samba 登录状态
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      windows 清除 samba 登录状态 简介 windows 登录 samba 共享目录之后，会保存当前用户的缓存，每次访问之后就无需再次输入账户密码，想要使用其他账户就需要把当前账户状态清理掉
+操作 方法一 重启电脑，如果保存用户名密码重启电脑不会清理账户状态
+方法二 命令行清理
+打开 cmd 命令行窗口
+查看所有连接
+net use 清除某个连接
+net use &lt;remote-name&gt; /del 清除所有连接
+net use * /del 
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/" class="link black dim">
+        git 基于某个分支重新构建项目
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      git 基于某个分支重建项目 简介 项目中因为不同需求构建多分支，其中某个分支改动量较大，想要独立成一个业务项目，本文记录了相关操作
+过程 重建 在项目目录中检出分支
+git checkout &lt;branch_name&gt; 拷贝项目到一个新的目录，并切换目录
+cp project new_project -r &amp;&amp; cd new_project 替换当前分支为主分支
+git branch -D master git branch -m master 建立远程仓库（根据项目仓库所在位置，自行创建）
+修改仓库地址并提交内容
+git remote set-url origin &lt;new-remote-url&gt; git push origin master 清理分支 如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支
+查看无效分支
+git remote prune origin --dry-run 清理无效分支
+git remote prune origin 如果本地还有一些已检出的分支需要清理，需要手动在本地清理
+git branch -d &lt;branch1 branch2 ...&gt; 
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/spdlog/external_runtime/" class="link black dim">
+        cmake external 外部项目设置 runtime 路径
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
+ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
+后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
+配置 目录结构 代码 顶层 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/" class="link black dim">
+        常用软件清单
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      文件浏览器 xyplorer directory opus total comman
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/git/git_describe/" class="link black dim">
+        git describe 命令详解
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      git describe 命令详解 git 获取最新的 tag 查找最近的tag
+git describe # 不需要后缀 git describe --abbrev=0 获取当前分支的tag
+git describe --abbrev=0 --tags 获取所有分支的tag
+git describe --tags `git rev-list --tags --max-count=1` 
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/software/samba/centos7%E9%85%8D%E7%BD%AEsambaclient/" class="link black dim">
+        centos 7 配置 samba client
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Samba - 如何配置 samba 客户端 SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。 本文介绍 centos 7 如何访问 smb 服务器的共享目录
+安装 samba 软件 yum -y install samba samba-client cifs-utils 注意: 推荐安装 samba 软件
+创建挂载目录
+mkdir -p /mnt/projects 确认是否能够连接到服务器，以及可以访问的共享目录
+# sambalicent -L //samba-server -U samba-username smbclient -L //samba-server -U samba Enter SAMBA\samba_user1&#39;s password: Domain=[LOCALHOST] OS=[Windows 6.1] Server=[Samba 4.6.2] Sharename Type Comment --------- ---- ------- homes Disk Home Directories print$ Disk Printer Drivers shared Disk Shared Directories projects Disk Shared Directories IPC$ IPC IPC Service (Samba server samba-storage) samba Disk Home Directories Domain=[LOCALHOST] OS=[Windows 6.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
