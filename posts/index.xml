@@ -6,7 +6,19 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Dec 2022 00:00:08 +0800</lastBuildDate><atom:link href="https://coderfamer.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Dec 2022 00:20:59 +0800</lastBuildDate><atom:link href="https://coderfamer.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>https://coderfamer.github.io/posts/hugo/</link>
+      <pubDate>Fri, 02 Dec 2022 00:20:59 +0800</pubDate>
+      
+      <guid>https://coderfamer.github.io/posts/hugo/</guid>
+      <description>hugo 安装和使用 hugo 安装 建立站点 hugo new site hugo_blog 添加主题 cd hugo_blog git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 配置文件中使用指定主题
+echo &amp;#39;theme = &amp;#34;ananke&amp;#34;&amp;#39; &amp;gt;&amp;gt;config.toml 创建新文章 hugo new posts/my-first-post.md --- title: &amp;#34;My First Post&amp;#34; date: 2022-12-02T00:00:08+08:00 draft: false --- ## first post 开启本地服务 hugo server --bind=0.0.0.0 --baseURL=http://&amp;lt;yourhost&amp;gt;:1313 在 github 部署个人博客 使用 github 的 user pagers 功能创建
+coderfamer.github.io
+rm -rf public git submodule add -b master git@github.com:&amp;lt;yourgitname&amp;gt;/&amp;lt;yourgitname&amp;gt;.github.io.git public 在根目录的 config.toml 添加 baseURL</description>
+    </item>
+    
     <item>
       <title>My First Post</title>
       <link>https://coderfamer.github.io/posts/my-first-post/</link>

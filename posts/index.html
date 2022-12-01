@@ -94,6 +94,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/hugo/" class="link black dim">
+        Hugo
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      hugo 安装和使用 hugo 安装 建立站点 hugo new site hugo_blog 添加主题 cd hugo_blog git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 配置文件中使用指定主题
+echo &#39;theme = &#34;ananke&#34;&#39; &gt;&gt;config.toml 创建新文章 hugo new posts/my-first-post.md --- title: &#34;My First Post&#34; date: 2022-12-02T00:00:08+08:00 draft: false --- ## first post 开启本地服务 hugo server --bind=0.0.0.0 --baseURL=http://&lt;yourhost&gt;:1313 在 github 部署个人博客 使用 github 的 user pagers 功能创建
+coderfamer.github.io
+rm -rf public git submodule add -b master git@github.com:&lt;yourgitname&gt;/&lt;yourgitname&gt;.github.io.git public 在根目录的 config.toml 添加 baseURL
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/my-first-post/" class="link black dim">
         My First Post
       </a>
