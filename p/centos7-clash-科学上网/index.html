@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='centos7 clash 科学上网 做开发经常需要访问国外编程网站，下载资料、访问 git 的时候经常会断连，需要部署网络代理，在 windows 上部署非常简单，只要下载 clash 客户端，导入 服务商的代理配置文件即可。在 linux 系统上就需要一些特殊步骤了
+前提 软件
+clash
+docker
+文件和配置 clash 服务商 yaml 配置 Country.mmdb（启动 clash 会自动下，建议手动下载）
+安装 clash 客户端 下载 clash
+1 2 3 mkdir /opt/clash &amp;amp;&amp;amp; cd /opt/clash wget https://github.com/Dreamacro/clash/releases/download/v1.10.6/clash-linux-amd64-v1.10.6.gz --no-check-certificate gunzip -c clash-linux-amd64-v1.10.6.gz &amp;gt; clash &amp;amp;&amp;amp; chmod &#43;x clash 下载 Country.mmdb
+1 2 mkdir -p ${HOME}/.config/clash &amp;amp;&amp;amp; cd ${HOME}/.config/clash wget https://dl.ssrss.club/Country.mmdb --no-check-certificate 导入服务商配置文件
+1 2 cd ${HOME}/.config/clash wget -O config.'>
+<title>centos7 clash 科学上网</title>
+
+<link rel='canonical' href='https://coderfamer.github.io/p/centos7-clash-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='centos7 clash 科学上网'>
+<meta property='og:description' content='centos7 clash 科学上网 做开发经常需要访问国外编程网站，下载资料、访问 git 的时候经常会断连，需要部署网络代理，在 windows 上部署非常简单，只要下载 clash 客户端，导入 服务商的代理配置文件即可。在 linux 系统上就需要一些特殊步骤了
+前提 软件
+clash
+docker
+文件和配置 clash 服务商 yaml 配置 Country.mmdb（启动 clash 会自动下，建议手动下载）
+安装 clash 客户端 下载 clash
+1 2 3 mkdir /opt/clash &amp;amp;&amp;amp; cd /opt/clash wget https://github.com/Dreamacro/clash/releases/download/v1.10.6/clash-linux-amd64-v1.10.6.gz --no-check-certificate gunzip -c clash-linux-amd64-v1.10.6.gz &amp;gt; clash &amp;amp;&amp;amp; chmod &#43;x clash 下载 Country.mmdb
+1 2 mkdir -p ${HOME}/.config/clash &amp;amp;&amp;amp; cd ${HOME}/.config/clash wget https://dl.ssrss.club/Country.mmdb --no-check-certificate 导入服务商配置文件
+1 2 cd ${HOME}/.config/clash wget -O config.'>
+<meta property='og:url' content='https://coderfamer.github.io/p/centos7-clash-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/'>
+<meta property='og:site_name' content='木又'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='utf-8' /><meta property='article:published_time' content='2022-06-03T15:07:32&#43;00:00'/><meta property='article:modified_time' content='2022-06-03T15:07:32&#43;00:00'/>
+<meta name="twitter:title" content="centos7 clash 科学上网">
+<meta name="twitter:description" content="centos7 clash 科学上网 做开发经常需要访问国外编程网站，下载资料、访问 git 的时候经常会断连，需要部署网络代理，在 windows 上部署非常简单，只要下载 clash 客户端，导入 服务商的代理配置文件即可。在 linux 系统上就需要一些特殊步骤了
+前提 软件
+clash
+docker
+文件和配置 clash 服务商 yaml 配置 Country.mmdb（启动 clash 会自动下，建议手动下载）
+安装 clash 客户端 下载 clash
+1 2 3 mkdir /opt/clash &amp;amp;&amp;amp; cd /opt/clash wget https://github.com/Dreamacro/clash/releases/download/v1.10.6/clash-linux-amd64-v1.10.6.gz --no-check-certificate gunzip -c clash-linux-amd64-v1.10.6.gz &amp;gt; clash &amp;amp;&amp;amp; chmod &#43;x clash 下载 Country.mmdb
+1 2 mkdir -p ${HOME}/.config/clash &amp;amp;&amp;amp; cd ${HOME}/.config/clash wget https://dl.ssrss.club/Country.mmdb --no-check-certificate 导入服务商配置文件
+1 2 cd ${HOME}/.config/clash wget -O config.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">木又</a></h1>
+            <h2 class="site-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/coderfamer'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://coderfamer.github.io/en/" >English</option>
+                        
+                            <option value="https://coderfamer.github.io/" selected>中文</option>
+                        
+                            <option value="https://coderfamer.github.io/ar/" >عربي</option>
+                        
+                    </select>
+                </li>
+            
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前提">前提</a></li>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#clash-客户端">clash 客户端</a></li>
+      </ol>
+    </li>
+    <li><a href="#web-页面配置">web 页面配置</a>
+      <ol>
+        <li><a href="#clash-dashboard-访问">clash Dashboard 访问</a></li>
+        <li><a href="#docker-clash-dashboard">docker clash DashBoard</a></li>
+      </ol>
+    </li>
+    <li><a href="#引用">引用</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/" >
+                编程经验
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/centos7-clash-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">centos7 clash 科学上网</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 03, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="centos7-clash-科学上网">centos7 clash 科学上网</h1>
+<hr>
+<p>做开发经常需要访问国外编程网站，下载资料、访问 git 的时候经常会断连，需要部署网络代理，在 windows 上部署非常简单，只要下载 clash 客户端，导入 服务商的代理配置文件即可。在 linux 系统上就需要一些特殊步骤了</p>
+<h2 id="前提">前提</h2>
+<p><strong>软件</strong></p>
+<ul>
+<li>
+<p>clash</p>
+</li>
+<li>
+<p>docker</p>
+</li>
+</ul>
+<p><strong>文件和配置</strong>
+clash
+服务商 yaml 配置
+Country.mmdb（启动 clash 会自动下，建议手动下载）</p>
+<h2 id="安装">安装</h2>
+<hr>
+<h3 id="clash-客户端">clash 客户端</h3>
+<p>下载  <a class="link" href="https://github.com/Dreamacro/clash/releases"  target="_blank" rel="noopener"
+    >clash</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir /opt/clash <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /opt/clash
+</span></span><span class="line"><span class="cl">wget https://github.com/Dreamacro/clash/releases/download/v1.10.6/clash-linux-amd64-v1.10.6.gz --no-check-certificate
+</span></span><span class="line"><span class="cl">gunzip -c clash-linux-amd64-v1.10.6.gz &gt; clash <span class="o">&amp;&amp;</span> chmod +x clash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载 <a class="link" href="https://dl.ssrss.club/Country.mmdb"  target="_blank" rel="noopener"
+    >Country.mmdb</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.config/clash <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.config/clash
+</span></span><span class="line"><span class="cl">wget https://dl.ssrss.club/Country.mmdb --no-check-certificate
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>导入服务商配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.config/clash
+</span></span><span class="line"><span class="cl">wget -O config.yaml <span class="s2">&#34;class订阅链接&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置代理端口</p>
+<ul>
+<li><strong>系统用户配置</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:7890 &gt;&gt; /etc/profile
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:7891 &gt;&gt; /etc/profile
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/profile
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>当前用户配置</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">http_proxy</span><span class="o">=</span>http://127.0.0.1:7890 &gt;&gt; <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nb">export</span> <span class="nv">https_proxy</span><span class="o">=</span>http://127.0.0.1:7891 &gt;&gt; <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>config.yaml</strong> 主要配置项修改  <strong>${HOME}/.config/clash</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># ip 设置为 127.0.0.1 只能本机访问，如若想局域网访问，设置地址为 0.0.0.0</span>
+</span></span><span class="line"><span class="cl">external-controller: 127.0.0.1:9090  <span class="c1"># 端口可自行修改</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># RESTful  api 口令，后续 web 访问使用，自行设置</span>
+</span></span><span class="line"><span class="cl">secret: <span class="s2">&#34;11111&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="web-页面配置">web 页面配置</h2>
+<p>有两种方法可以配置 web 页面，分别是 [clash Dashboard](<a class="link" href="http://clash.razord.top/#/proxies"  target="_blank" rel="noopener"
+    >Clash (razord.top)</a>) 和 docker clash Dashbaord</p>
+<h3 id="clash-dashboard-访问">clash Dashboard 访问</h3>
+<p>直接访问 <strong><a class="link" href="http://clash.razord.top/#/proxies"  target="_blank" rel="noopener"
+    >http://clash.razord.top/#/proxies</a></strong> ，输入 ip、端口和口令，即可进行切换节点、延迟测试等操作</p>
+<h3 id="docker-clash-dashboard">docker clash DashBoard</h3>
+<p>确保 docker 已经安装完毕</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker pull haishanh/yacd
+</span></span><span class="line"><span class="cl">docker run -p 1234:80 -d haishanh/yacd  <span class="c1"># 端口映射到 80，随意配置未用端口</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>浏览器输入<strong>主机ip+端口</strong>即可访问 <!-- raw HTML omitted -->:1234</p>
+<h2 id="引用">引用</h2>
+<p><a class="link" href="https://www.cfmem.com/2021/09/clash-core-docker.html"  target="_blank" rel="noopener"
+    >clash核心程序 docker 环境运行，支持 restful接口，dashboard ui，一端运行支持所有的操作系统，Linux|windows|macos|ios|安卓|科学上网 (cfmem.com)</a></p>
+<p><a class="link" href="https://199604.com/2001"  target="_blank" rel="noopener"
+    >Linux(Centos7) 使用Clash For Linux网络代理工具教程 – 记忆角落 (199604.com)</a></p>
+<p><a class="link" href="https://github.com/Dreamacro/clash/releases"  target="_blank" rel="noopener"
+    >Releases · Dreamacro/clash (github.com)</a></p>
+<p><a class="link" href="https://zhuanlan.zhihu.com/p/423684520"  target="_blank" rel="noopener"
+    >Docker+Clash 部署透明“网关”的实现 - 知乎 (zhihu.com)</a></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/utf-8/">utf-8</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/utf-8-%E7%BC%96%E7%A0%81/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">utf-8 编码</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<center>
+<span id="busuanzi_container_site_pv"> 
+    本站访客数 <span id="busuanzi_value_site_uv"></span>次 
+    <i><i class="fa fa-spinner fa-spin"></i>
+</span>
+<span id="busuanzi_container_site_pv"> 
+    本站访问总量 <span id="busuanzi_value_site_pv"></span>次
+</span>
+
+<span id="busuanzi_container_page_pv"> 
+    本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
+</span>
+<center>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
