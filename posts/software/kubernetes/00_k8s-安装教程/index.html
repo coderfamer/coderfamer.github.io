@@ -3,10 +3,10 @@
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='centos 7 离线安装 kubernets (k8s) 下载离线安装包 准备一个可以连接外网的 centos7 机器，机器做好快照。
 准备 安装必要程序
-yum install yum-utils 生成docker 安装包 因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker
-更新 docker 源 yum install -y epel-release.noarch yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 导出并安装 导出 docker 安装包和其依赖包
-mkdir docker &amp;amp;&amp;amp; cd docker yumdownloader --resolve docker ce 安装并启动 docker
-yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp;&amp;amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.repos.d/kubernets.repo'>
+1 yum install yum-utils 生成docker 安装包 因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker
+更新 docker 源 1 2 yum install -y epel-release.noarch yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 导出并安装 导出 docker 安装包和其依赖包
+1 2 mkdir docker &amp;amp;&amp;amp; cd docker yumdownloader --resolve docker ce 安装并启动 docker
+1 2 yum install -y docker-ce systemctl start docker 1 systemctl enable docker &amp;amp;&amp;amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.'>
 <title>centos7 离线安装 kubernets (k8s)</title>
 
 <link rel='canonical' href='https://coderfamer.github.io/posts/software/kubernetes/00_k8s-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/'>
@@ -14,20 +14,20 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='centos7 离线安装 kubernets (k8s)'>
 <meta property='og:description' content='centos 7 离线安装 kubernets (k8s) 下载离线安装包 准备一个可以连接外网的 centos7 机器，机器做好快照。
 准备 安装必要程序
-yum install yum-utils 生成docker 安装包 因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker
-更新 docker 源 yum install -y epel-release.noarch yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 导出并安装 导出 docker 安装包和其依赖包
-mkdir docker &amp;amp;&amp;amp; cd docker yumdownloader --resolve docker ce 安装并启动 docker
-yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp;&amp;amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.repos.d/kubernets.repo'>
+1 yum install yum-utils 生成docker 安装包 因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker
+更新 docker 源 1 2 yum install -y epel-release.noarch yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 导出并安装 导出 docker 安装包和其依赖包
+1 2 mkdir docker &amp;amp;&amp;amp; cd docker yumdownloader --resolve docker ce 安装并启动 docker
+1 2 yum install -y docker-ce systemctl start docker 1 systemctl enable docker &amp;amp;&amp;amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.'>
 <meta property='og:url' content='https://coderfamer.github.io/posts/software/kubernetes/00_k8s-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/'>
-<meta property='og:site_name' content='My New Hugo Site'>
+<meta property='og:site_name' content='Example Site'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2022-04-23T15:07:32&#43;00:00'/><meta property='article:modified_time' content='2022-04-23T15:07:32&#43;00:00'/>
 <meta name="twitter:title" content="centos7 离线安装 kubernets (k8s)">
 <meta name="twitter:description" content="centos 7 离线安装 kubernets (k8s) 下载离线安装包 准备一个可以连接外网的 centos7 机器，机器做好快照。
 准备 安装必要程序
-yum install yum-utils 生成docker 安装包 因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker
-更新 docker 源 yum install -y epel-release.noarch yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 导出并安装 导出 docker 安装包和其依赖包
-mkdir docker &amp;amp;&amp;amp; cd docker yumdownloader --resolve docker ce 安装并启动 docker
-yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp;&amp;amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.repos.d/kubernets.repo">
+1 yum install yum-utils 生成docker 安装包 因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker
+更新 docker 源 1 2 yum install -y epel-release.noarch yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo 导出并安装 导出 docker 安装包和其依赖包
+1 2 mkdir docker &amp;amp;&amp;amp; cd docker yumdownloader --resolve docker ce 安装并启动 docker
+1 2 yum install -y docker-ce systemctl start docker 1 systemctl enable docker &amp;amp;&amp;amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.">
     </head>
     <body class="
     article-page
@@ -54,7 +54,7 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -77,19 +77,86 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
                 
                 </a>
                 
+                    <span class="emoji">🍥</span>
+                
             </figure>
             
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">My New Hugo Site</a></h1>
-            <h2 class="site-description"></h2>
+            <h1 class="site-name"><a href="/">Example Site</a></h1>
+            <h2 class="site-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
         </div>
-    </header><ol class="menu" id="main-menu">
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
         
         
 
         <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://coderfamer.github.io/" selected>English</option>
+                        
+                            <option value="https://coderfamer.github.io/zh-cn/" >中文</option>
+                        
+                            <option value="https://coderfamer.github.io/ar/" >عربي</option>
+                        
+                    </select>
+                </li>
+            
             
             
                 <li id="dark-mode-toggle">
@@ -116,7 +183,79 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#下载离线安装包">下载离线安装包</a>
+      <ol>
+        <li><a href="#准备">准备</a></li>
+        <li><a href="#生成docker-安装包">生成docker 安装包</a>
+          <ol>
+            <li><a href="#更新-docker-源">更新 docker 源</a></li>
+            <li><a href="#导出并安装">导出并安装</a></li>
+          </ol>
+        </li>
+        <li><a href="#k8s-包及相关镜像">k8s 包及相关镜像</a>
+          <ol>
+            <li><a href="#k8s-安装包-导出">k8s 安装包 导出</a></li>
+            <li><a href="#k8s-相关镜像导出">k8s 相关镜像导出</a></li>
+            <li><a href="#下载网络插件">下载网络插件</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#安装-k8s">安装 k8s</a>
+      <ol>
+        <li><a href="#准备操作">准备操作</a></li>
+        <li><a href="#安装-docker">安装 docker</a></li>
+        <li><a href="#安装-k8s-1">安装 k8s</a></li>
+      </ol>
+    </li>
+    <li><a href="#安装-master-节点-以及-node-加入集群">安装 master 节点 以及 node 加入集群</a>
+      <ol>
+        <li><a href="#master-节点">master 节点</a>
+          <ol>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#配置网络插件">配置网络插件</a></li>
+          </ol>
+        </li>
+        <li><a href="#node-节点加入集群">node 节点加入集群</a>
+          <ol>
+            <li><a href="#更改-hostname">更改 hostname</a></li>
+            <li><a href="#加入集群">加入集群</a></li>
+          </ol>
+        </li>
+        <li><a href="#下载-kubernets-的相关镜像">下载 Kubernets 的相关镜像</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -188,17 +327,40 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 <p>准备一个可以连接外网的 centos7 机器，机器做好快照。</p>
 <h3 id="准备">准备</h3>
 <p>安装必要程序</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install yum-utils
-</span></span></code></pre></div><h3 id="生成docker-安装包">生成docker 安装包</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install yum-utils
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="生成docker-安装包">生成docker 安装包</h3>
 <p>因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker</p>
 <h4 id="更新-docker-源">更新 docker 源</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install -y epel-release.noarch
-</span></span><span style="display:flex;"><span>yum-config-manager --add-repo<span style="color:#f92672">=</span>https://download.docker.com/linux/centos/docker-ce.repo
-</span></span></code></pre></div><h4 id="导出并安装">导出并安装</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install -y epel-release.noarch
+</span></span><span class="line"><span class="cl">yum-config-manager --add-repo<span class="o">=</span>https://download.docker.com/linux/centos/docker-ce.repo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="导出并安装">导出并安装</h4>
 <p>导出 docker 安装包和其依赖包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir docker <span style="color:#f92672">&amp;&amp;</span> cd docker
-</span></span><span style="display:flex;"><span>yumdownloader --resolve docker ce
-</span></span></code></pre></div><p><img src="/images/k8s_00_docker.png"
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir docker <span class="o">&amp;&amp;</span> <span class="nb">cd</span> docker
+</span></span><span class="line"><span class="cl">yumdownloader --resolve docker ce
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/images/k8s_00_docker.png"
 	
 	
 	
@@ -207,26 +369,69 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 	
 ></p>
 <p>安装并启动 docker</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install -y docker-ce 
-</span></span><span style="display:flex;"><span>systemctl start docker
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl enable docker <span style="color:#f92672">&amp;&amp;</span> systemctl start docker
-</span></span></code></pre></div><h3 id="k8s-包及相关镜像">k8s 包及相关镜像</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install -y docker-ce 
+</span></span><span class="line"><span class="cl">systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span> systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="k8s-包及相关镜像">k8s 包及相关镜像</h3>
 <h4 id="k8s-安装包-导出">k8s 安装包 导出</h4>
 <p>配置修改 yum 源
 <strong>vim /etc/yum.repos.d/kubernets.repo</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">[</span>kubernetes<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>name<span style="color:#f92672">=</span>Kubernetes
-</span></span><span style="display:flex;"><span>baseurl<span style="color:#f92672">=</span>http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-</span></span><span style="display:flex;"><span>enabled<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>repo_gpgcheck<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>gpgkey<span style="color:#f92672">=</span>http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
-</span></span><span style="display:flex;"><span>       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-</span></span></code></pre></div><p>重新生成 repo 信息</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum clean all <span style="color:#f92672">&amp;&amp;</span> yum makecache
-</span></span></code></pre></div><p>离线下载安装包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yumdownlaoder --reslove kubelet kubeadm kubectl
-</span></span></code></pre></div><p>查看安装包 ls
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>kubernetes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span>Kubernetes
+</span></span><span class="line"><span class="cl"><span class="nv">baseurl</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">repo_gpgcheck</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgkey</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+</span></span><span class="line"><span class="cl">       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重新生成 repo 信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum clean all <span class="o">&amp;&amp;</span> yum makecache
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>离线下载安装包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yumdownlaoder --reslove kubelet kubeadm kubectl
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看安装包 ls
 <img src="/images/k8s_00_k8s.png"
 	
 	
@@ -237,21 +442,52 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 ></p>
 <h4 id="k8s-相关镜像导出">k8s 相关镜像导出</h4>
 <p>k8s 基本镜像如下</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>k8s.gcr.io/kube-apiserver:v1.23.6
-</span></span><span style="display:flex;"><span>k8s.gcr.io/kube-controller-manager:v1.23.6
-</span></span><span style="display:flex;"><span>k8s.gcr.io/kube-scheduler:v1.23.6
-</span></span><span style="display:flex;"><span>k8s.gcr.io/kube-proxy:v1.23.6
-</span></span><span style="display:flex;"><span>k8s.gcr.io/pause:3.6
-</span></span><span style="display:flex;"><span>k8s.gcr.io/etcd:3.5.1-0
-</span></span><span style="display:flex;"><span>k8s.gcr.io/coredns/coredns:v1.8.6
-</span></span></code></pre></div><p>docker  拉取所有镜像，并导出镜像</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 拉取镜像、打标签、删除旧的镜像</span>
-</span></span><span style="display:flex;"><span>docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6
-</span></span><span style="display:flex;"><span>docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6 k8s.gcr.io/kube-apiserver:v1.23.6
-</span></span><span style="display:flex;"><span>docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 导出镜像保存为 tar 包</span>
-</span></span><span style="display:flex;"><span>docker save -o kube-apiserver.tar k8s.gcr.io/kube-apiserver:v1.23.6
-</span></span></code></pre></div><p>对所有的镜像执行类似操作，可以通过脚本解决
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">k8s.gcr.io/kube-apiserver:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/kube-controller-manager:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/kube-scheduler:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/kube-proxy:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/pause:3.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/etcd:3.5.1-0
+</span></span><span class="line"><span class="cl">k8s.gcr.io/coredns/coredns:v1.8.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>docker  拉取所有镜像，并导出镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 拉取镜像、打标签、删除旧的镜像</span>
+</span></span><span class="line"><span class="cl">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6
+</span></span><span class="line"><span class="cl">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6 k8s.gcr.io/kube-apiserver:v1.23.6
+</span></span><span class="line"><span class="cl">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 导出镜像保存为 tar 包</span>
+</span></span><span class="line"><span class="cl">docker save -o kube-apiserver.tar k8s.gcr.io/kube-apiserver:v1.23.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对所有的镜像执行类似操作，可以通过脚本解决
 将所有导出的 rpm 包和 tar 镜像打包保存备用。</p>
 <h4 id="下载网络插件">下载网络插件</h4>
 <h5 id="选择一">选择一</h5>
@@ -264,9 +500,17 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 <p><a class="link" href="https://projectcalico.docs.tigera.io/maintenance/clis/calicoctl/install#install-calicoctl-as-a-kubernetes-pod"  target="_blank" rel="noopener"
     >calico</a></p>
 <p>下载网络插件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://docs.projectcalico.org/v3.20/manifests/calico.yaml
-</span></span><span style="display:flex;"><span>kubectl apply -f calico.yaml
-</span></span></code></pre></div><p>docker 会自动下载 calico 相关镜像
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://docs.projectcalico.org/v3.20/manifests/calico.yaml
+</span></span><span class="line"><span class="cl">kubectl apply -f calico.yaml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>docker 会自动下载 calico 相关镜像
 <img src="/images/k8s_00_calico.png"
 	
 	
@@ -290,65 +534,172 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 <h2 id="安装-k8s">安装 k8s</h2>
 <hr>
 <h3 id="准备操作">准备操作</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 关闭防火墙</span>
-</span></span><span style="display:flex;"><span>systemctl disalbe firewalld
-</span></span><span style="display:flex;"><span>systemctl stop firewalld
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 关闭 selinux</span>
-</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39;</span> /etc/sysconfig/selinux
-</span></span><span style="display:flex;"><span>setenforce <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 禁用 swap 分区</span>
-</span></span><span style="display:flex;"><span>swapoff -a  <span style="color:#75715e"># 临时禁用</span>
-</span></span><span style="display:flex;"><span>sed -i <span style="color:#e6db74">&#39;s/.*swap.*/#&amp;/&#39;</span> /etc/fstab  <span style="color:#75715e">#永久禁用</span>
-</span></span></code></pre></div><p>设置 iptables 网桥参数</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF | tee  /etc/sysctl.d/k8s.conf
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-ip6tables = 1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">net.bridge.bridge-nf-call-iptables = 1
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sysctl --system
-</span></span><span style="display:flex;"><span>sysctl -a
-</span></span></code></pre></div><h3 id="安装-docker">安装 docker</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 关闭防火墙</span>
+</span></span><span class="line"><span class="cl">systemctl disalbe firewalld
+</span></span><span class="line"><span class="cl">systemctl stop firewalld
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭 selinux</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39;</span> /etc/sysconfig/selinux
+</span></span><span class="line"><span class="cl">setenforce <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 禁用 swap 分区</span>
+</span></span><span class="line"><span class="cl">swapoff -a  <span class="c1"># 临时禁用</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/.*swap.*/#&amp;/&#39;</span> /etc/fstab  <span class="c1">#永久禁用</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置 iptables 网桥参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF | tee  /etc/sysctl.d/k8s.conf
+</span></span></span><span class="line"><span class="cl"><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
+</span></span></span><span class="line"><span class="cl"><span class="s">net.bridge.bridge-nf-call-iptables = 1
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sysctl --system
+</span></span><span class="line"><span class="cl">sysctl -a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-docker">安装 docker</h3>
 <p>拷贝保存好的 docker 相关 rpm 包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd docker
-</span></span><span style="display:flex;"><span>yum localinstall -y docker-ce
-</span></span></code></pre></div><p>修改 docker 的 cgroup 驱动</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/docker/daemon.json
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;log-driver&#34;: &#34;json-file&#34;,
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;log-opts&#34;: {
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;max-size&#34;: &#34;100m&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;storage-driver&#34;: &#34;overlay2&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
-</span></span></code></pre></div><p>启动docker</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl daemon-reload
-</span></span><span style="display:flex;"><span>systemctl start docker
-</span></span><span style="display:flex;"><span>systemctl enable docker
-</span></span></code></pre></div><h3 id="安装-k8s-1">安装 k8s</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> docker
+</span></span><span class="line"><span class="cl">yum localinstall -y docker-ce
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改 docker 的 cgroup 驱动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF &gt; /etc/docker/daemon.json
+</span></span></span><span class="line"><span class="cl"><span class="s">{
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;log-driver&#34;: &#34;json-file&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;log-opts&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;max-size&#34;: &#34;100m&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">  },
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;storage-driver&#34;: &#34;overlay2&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">}
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动docker</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl start docker
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-k8s-1">安装 k8s</h3>
 <p>拷贝 k8s 相关 rpm 包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd k8s
-</span></span><span style="display:flex;"><span>yum localinstall * --disableexcludes<span style="color:#f92672">=</span>kubernetes
-</span></span><span style="display:flex;"><span>systemctl start kubelet
-</span></span><span style="display:flex;"><span>systemctl enable kubelet
-</span></span></code></pre></div><p>加载 k8s 相关镜像
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> k8s
+</span></span><span class="line"><span class="cl">yum localinstall * --disableexcludes<span class="o">=</span>kubernetes
+</span></span><span class="line"><span class="cl">systemctl start kubelet
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> kubelet
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>加载 k8s 相关镜像
 拷贝相关镜像包</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd images
-</span></span><span style="display:flex;"><span>find -type f -iname <span style="color:#e6db74">&#34;*.tar&#34;</span> | xargs -i docker load --input <span style="color:#f92672">{}</span>
-</span></span></code></pre></div><p>加载 k8s 网络插件相关镜像</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd calico
-</span></span><span style="display:flex;"><span>find -type f -iname <span style="color:#e6db74">&#34;*.tar&#34;</span> | xargs -i docker load --input <span style="color:#f92672">{}</span>
-</span></span></code></pre></div><h2 id="安装-master-节点-以及-node-加入集群">安装 master 节点 以及 node 加入集群</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> images
+</span></span><span class="line"><span class="cl">find -type f -iname <span class="s2">&#34;*.tar&#34;</span> <span class="p">|</span> xargs -i docker load --input <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>加载 k8s 网络插件相关镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> calico
+</span></span><span class="line"><span class="cl">find -type f -iname <span class="s2">&#34;*.tar&#34;</span> <span class="p">|</span> xargs -i docker load --input <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-master-节点-以及-node-加入集群">安装 master 节点 以及 node 加入集群</h2>
 <h3 id="master-节点">master 节点</h3>
 <p>所有的准备工作已经就绪，运行 kuberadm init 命令即可意见安装 k8s 的 master 节点, kubeadm 安装过程不会初始化网络插件，安装网络插件对 kuberadm init 会有一定的参数要求。以 calico 为例，安装时候需要指定
 &ndash;pod-network-cidr=192.168.0.0/16</p>
 <h4 id="安装">安装</h4>
 <p>默认 hostname 可能为 localhost.localdomain，可以通过 <strong>hosntame</strong> 命令查看，需要修改 hostname 名称，防止后续添加 node 冲突</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 设置 hostname</span>
-</span></span><span style="display:flex;"><span>hostnamectl set-hostname k8s-master
-</span></span></code></pre></div><p>安装 master 节点</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubeadm init --pod-network-cidr<span style="color:#f92672">=</span>192.168.0.0/16
-</span></span></code></pre></div><p>安装成功之后，需要配置admin.conf,安装成功结尾处也会提示如何配置，同时需要保存输出最后一行的 join 命令
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置 hostname</span>
+</span></span><span class="line"><span class="cl">hostnamectl set-hostname k8s-master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装 master 节点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm init --pod-network-cidr<span class="o">=</span>192.168.0.0/16
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装成功之后，需要配置admin.conf,安装成功结尾处也会提示如何配置，同时需要保存输出最后一行的 join 命令
 <img src="/images/k8s_00-kubeadm-init.png"
 	
 	
@@ -361,25 +712,58 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 <ul>
 <li>
 <p>非 root 用户</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 复制配置文件</span>
-</span></span><span style="display:flex;"><span>mkdir -p $HOME/.kube
-</span></span><span style="display:flex;"><span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-</span></span><span style="display:flex;"><span>sudo chown <span style="color:#66d9ef">$(</span>id -u<span style="color:#66d9ef">)</span>:<span style="color:#66d9ef">$(</span>id -g<span style="color:#66d9ef">)</span> $HOME/.kube/config
-</span></span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 复制配置文件</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$HOME</span>/.kube
+</span></span><span class="line"><span class="cl">sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+</span></span><span class="line"><span class="cl">sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>root 用户</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 设置环境变量</span>
-</span></span><span style="display:flex;"><span>export KUBECONFIG<span style="color:#f92672">=</span>/etc/kubernetes/admin.conf
-</span></span></code></pre></div></li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/kubernetes/admin.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 <p>保存生成的 join 命令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubeadm join 192.168.0.20:6443 --token 96f70b.i1asdsfderoaiq5o <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--discovery-token-ca-cert-hash sha256:c2ada929e36dd048298adb438fdafdsab8f2a6e499911fa09fce26
-</span></span></code></pre></div><h4 id="配置网络插件">配置网络插件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm join 192.168.0.20:6443 --token 96f70b.i1asdsfderoaiq5o <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--discovery-token-ca-cert-hash sha256:c2ada929e36dd048298adb438fdafdsab8f2a6e499911fa09fce26
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="配置网络插件">配置网络插件</h4>
 <p>到当前步骤， k8s 基本安装完成，但是节点依然是 NotReady 状态，这是因为还没有安装网络插件。
 拷贝事先准备好的的 calico.yml</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubectl apply -f calico.yml
-</span></span></code></pre></div><p>安装配置完成之后，等待片刻，再次查看节点状态。<strong>kubectl get nodes</strong>，可以看到状态已经变为 Ready 状态
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f calico.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装配置完成之后，等待片刻，再次查看节点状态。<strong>kubectl get nodes</strong>，可以看到状态已经变为 Ready 状态
 <img src="/images/k8s_00-node-status.png"
 	
 	
@@ -391,19 +775,41 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 <h3 id="node-节点加入集群">node 节点加入集群</h3>
 <p>node 节点安装配置除去 kuberadm init 和 网络插件配置之外，安装步骤基本一致（node 节点上也不用安装 kubectl）。</p>
 <h4 id="更改-hostname">更改 hostname</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hostnamectl set-hostname node1
-</span></span></code></pre></div><h4 id="加入集群">加入集群</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hostnamectl set-hostname node1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="加入集群">加入集群</h4>
 <p>使用 <strong>kubeadm join</strong> 加入集群，拷贝之前步骤中安装成功之后生成的 join 命令</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubeadm join 192.168.0.20:6443 --token 96f70b.i1asdsfderoaiq5o <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>	--discovery-token-ca-cert-hash sha256:c2ada929e36dd048298adb438fdafdsab8f2a6e499911fa09fce26
-</span></span></code></pre></div><p>hostname</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm join 192.168.0.20:6443 --token 96f70b.i1asdsfderoaiq5o <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--discovery-token-ca-cert-hash sha256:c2ada929e36dd048298adb438fdafdsab8f2a6e499911fa09fce26
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>hostname</p>
 <p>selinux</p>
 <p>firewalld</p>
 <p>swapoff   -a</p>
 <h3 id="下载-kubernets-的相关镜像">下载 Kubernets 的相关镜像</h3>
 <p>查看所需镜像列表</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>kubeadm config image list
-</span></span></code></pre></div><p>kubeadm init &ndash;pod-network-cidr=192.168.0.0/16</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm config image list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>kubeadm init &ndash;pod-network-cidr=192.168.0.0/16</p>
 
 </section>
 
@@ -415,6 +821,18 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
     </section>
 
 
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
     </footer>
 
 
@@ -456,6 +874,19 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
 </article>
 
             
+                
+<article class="">
+    <a href="/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">git 基于某个分支重新构建项目</h2>
+        </div>
+    </a>
+</article>
+
+            
         </div>
     </div>
 </aside>
@@ -463,13 +894,57 @@ yum install -y docker-ce systemctl start docker systemctl enable docker &amp;amp
      
     
         
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
     
 
     <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
-        2022 My New Hugo Site
+            2020 - 
+        
+        2022 Example Site
     </section>
     
     <section class="powerby">

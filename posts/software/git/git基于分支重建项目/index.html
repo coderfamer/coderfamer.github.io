@@ -3,15 +3,15 @@
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='git 基于某个分支重建项目 简介 项目中因为不同需求构建多分支，其中某个分支改动量较大，想要独立成一个业务项目，本文记录了相关操作
 过程 重建 在项目目录中检出分支
-git checkout &amp;lt;branch_name&amp;gt; 拷贝项目到一个新的目录，并切换目录
-cp project new_project -r &amp;amp;&amp;amp; cd new_project 替换当前分支为主分支
-git branch -D master git branch -m master 建立远程仓库（根据项目仓库所在位置，自行创建）
+1 git checkout &amp;lt;branch_name&amp;gt; 拷贝项目到一个新的目录，并切换目录
+1 cp project new_project -r &amp;amp;&amp;amp; cd new_project 替换当前分支为主分支
+1 2 git branch -D master git branch -m master 建立远程仓库（根据项目仓库所在位置，自行创建）
 修改仓库地址并提交内容
-git remote set-url origin &amp;lt;new-remote-url&amp;gt; git push origin master 清理分支 如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支
+1 2 git remote set-url origin &amp;lt;new-remote-url&amp;gt; git push origin master 清理分支 如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支
 查看无效分支
-git remote prune origin --dry-run 清理无效分支
-git remote prune origin 如果本地还有一些已检出的分支需要清理，需要手动在本地清理
-git branch -d &amp;lt;branch1 branch2 ...&amp;gt; '>
+1 git remote prune origin --dry-run 清理无效分支
+1 git remote prune origin 如果本地还有一些已检出的分支需要清理，需要手动在本地清理
+1 git branch -d &amp;lt;branch1 branch2 .'>
 <title>git 基于某个分支重新构建项目</title>
 
 <link rel='canonical' href='https://coderfamer.github.io/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/'>
@@ -19,30 +19,30 @@ git branch -d &amp;lt;branch1 branch2 ...&amp;gt; '>
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='git 基于某个分支重新构建项目'>
 <meta property='og:description' content='git 基于某个分支重建项目 简介 项目中因为不同需求构建多分支，其中某个分支改动量较大，想要独立成一个业务项目，本文记录了相关操作
 过程 重建 在项目目录中检出分支
-git checkout &amp;lt;branch_name&amp;gt; 拷贝项目到一个新的目录，并切换目录
-cp project new_project -r &amp;amp;&amp;amp; cd new_project 替换当前分支为主分支
-git branch -D master git branch -m master 建立远程仓库（根据项目仓库所在位置，自行创建）
+1 git checkout &amp;lt;branch_name&amp;gt; 拷贝项目到一个新的目录，并切换目录
+1 cp project new_project -r &amp;amp;&amp;amp; cd new_project 替换当前分支为主分支
+1 2 git branch -D master git branch -m master 建立远程仓库（根据项目仓库所在位置，自行创建）
 修改仓库地址并提交内容
-git remote set-url origin &amp;lt;new-remote-url&amp;gt; git push origin master 清理分支 如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支
+1 2 git remote set-url origin &amp;lt;new-remote-url&amp;gt; git push origin master 清理分支 如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支
 查看无效分支
-git remote prune origin --dry-run 清理无效分支
-git remote prune origin 如果本地还有一些已检出的分支需要清理，需要手动在本地清理
-git branch -d &amp;lt;branch1 branch2 ...&amp;gt; '>
+1 git remote prune origin --dry-run 清理无效分支
+1 git remote prune origin 如果本地还有一些已检出的分支需要清理，需要手动在本地清理
+1 git branch -d &amp;lt;branch1 branch2 .'>
 <meta property='og:url' content='https://coderfamer.github.io/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/'>
-<meta property='og:site_name' content='My New Hugo Site'>
+<meta property='og:site_name' content='Example Site'>
 <meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:tag' content='git' /><meta property='article:published_time' content='2022-03-08T15:07:32&#43;00:00'/><meta property='article:modified_time' content='2022-03-08T15:07:32&#43;00:00'/>
 <meta name="twitter:title" content="git 基于某个分支重新构建项目">
 <meta name="twitter:description" content="git 基于某个分支重建项目 简介 项目中因为不同需求构建多分支，其中某个分支改动量较大，想要独立成一个业务项目，本文记录了相关操作
 过程 重建 在项目目录中检出分支
-git checkout &amp;lt;branch_name&amp;gt; 拷贝项目到一个新的目录，并切换目录
-cp project new_project -r &amp;amp;&amp;amp; cd new_project 替换当前分支为主分支
-git branch -D master git branch -m master 建立远程仓库（根据项目仓库所在位置，自行创建）
+1 git checkout &amp;lt;branch_name&amp;gt; 拷贝项目到一个新的目录，并切换目录
+1 cp project new_project -r &amp;amp;&amp;amp; cd new_project 替换当前分支为主分支
+1 2 git branch -D master git branch -m master 建立远程仓库（根据项目仓库所在位置，自行创建）
 修改仓库地址并提交内容
-git remote set-url origin &amp;lt;new-remote-url&amp;gt; git push origin master 清理分支 如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支
+1 2 git remote set-url origin &amp;lt;new-remote-url&amp;gt; git push origin master 清理分支 如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支
 查看无效分支
-git remote prune origin --dry-run 清理无效分支
-git remote prune origin 如果本地还有一些已检出的分支需要清理，需要手动在本地清理
-git branch -d &amp;lt;branch1 branch2 ...&amp;gt; ">
+1 git remote prune origin --dry-run 清理无效分支
+1 git remote prune origin 如果本地还有一些已检出的分支需要清理，需要手动在本地清理
+1 git branch -d &amp;lt;branch1 branch2 .">
     </head>
     <body class="
     article-page
@@ -69,7 +69,7 @@ git branch -d &amp;lt;branch1 branch2 ...&amp;gt; ">
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -92,19 +92,86 @@ git branch -d &amp;lt;branch1 branch2 ...&amp;gt; ">
                 
                 </a>
                 
+                    <span class="emoji">🍥</span>
+                
             </figure>
             
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">My New Hugo Site</a></h1>
-            <h2 class="site-description"></h2>
+            <h1 class="site-name"><a href="/">Example Site</a></h1>
+            <h2 class="site-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
         </div>
-    </header><ol class="menu" id="main-menu">
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://twitter.com'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
         
         
 
         <div class="menu-bottom-section">
+                <li id="i18n-switch">  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                    <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+                        
+                            <option value="https://coderfamer.github.io/" selected>English</option>
+                        
+                            <option value="https://coderfamer.github.io/zh-cn/" >中文</option>
+                        
+                            <option value="https://coderfamer.github.io/ar/" >عربي</option>
+                        
+                    </select>
+                </li>
+            
             
             
                 <li id="dark-mode-toggle">
@@ -131,7 +198,44 @@ git branch -d &amp;lt;branch1 branch2 ...&amp;gt; ">
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#过程">过程</a>
+      <ol>
+        <li><a href="#重建">重建</a></li>
+        <li><a href="#清理分支">清理分支</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -204,25 +308,76 @@ git branch -d &amp;lt;branch1 branch2 ...&amp;gt; ">
 <h2 id="过程">过程</h2>
 <h3 id="重建">重建</h3>
 <p>在项目目录中检出分支</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git checkout &lt;branch_name&gt;
-</span></span></code></pre></div><p>拷贝项目到一个新的目录，并切换目录</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cp  project new_project -r <span style="color:#f92672">&amp;&amp;</span> cd new_project
-</span></span></code></pre></div><p>替换当前分支为主分支</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git branch -D master
-</span></span><span style="display:flex;"><span>git branch -m master
-</span></span></code></pre></div><p>建立远程仓库（根据项目仓库所在位置，自行创建）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git checkout &lt;branch_name&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>拷贝项目到一个新的目录，并切换目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cp  project new_project -r <span class="o">&amp;&amp;</span> <span class="nb">cd</span> new_project
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>替换当前分支为主分支</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git branch -D master
+</span></span><span class="line"><span class="cl">git branch -m master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>建立远程仓库（根据项目仓库所在位置，自行创建）</p>
 <p>修改仓库地址并提交内容</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote set-url origin &lt;new-remote-url&gt;
-</span></span><span style="display:flex;"><span>git push origin master
-</span></span></code></pre></div><h3 id="清理分支">清理分支</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git remote set-url origin &lt;new-remote-url&gt;
+</span></span><span class="line"><span class="cl">git push origin master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="清理分支">清理分支</h3>
 <p>如果旧项目中有很多分支和远程分支，在新项目中会显的杂乱，可以利用 git 命令清理一些无效分支，即不想保存在 remote 的分支</p>
 <p>查看无效分支</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote prune origin --dry-run
-</span></span></code></pre></div><p>清理无效分支</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote prune origin
-</span></span></code></pre></div><p>如果本地还有一些已检出的分支需要清理，需要手动在本地清理</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git branch -d &lt;branch1 branch2 ...&gt;
-</span></span></code></pre></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git remote prune origin --dry-run
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>清理无效分支</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git remote prune origin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果本地还有一些已检出的分支需要清理，需要手动在本地清理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git branch -d &lt;branch1 branch2 ...&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -235,6 +390,18 @@ git branch -d &amp;lt;branch1 branch2 ...&amp;gt; ">
     </section>
 
 
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
     </footer>
 
 
@@ -245,16 +412,108 @@ git branch -d &amp;lt;branch1 branch2 ...&amp;gt; ">
 
     
 
+<aside class="related-content--wrapper">
+    <h2 class="section-title">Related content</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/posts/software/kubernetes/01_k8s%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90token/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">centos7 离线安装 kubernets (k8s)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/software/kubernetes/00_k8s-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">centos7 离线安装 kubernets (k8s)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/posts/software/samba/windows-samba-%E6%B8%85%E9%99%A4%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">windows 清除 samba 登录状态</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
      
     
         
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
     
 
     <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
-        2022 My New Hugo Site
+            2020 - 
+        
+        2022 Example Site
     </section>
     
     <section class="powerby">
