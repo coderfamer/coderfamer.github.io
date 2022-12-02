@@ -19,23 +19,6 @@
                 href="https://coderfamer.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://coderfamer.github.io/en/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://coderfamer.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://coderfamer.github.io/ar/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://coderfamer.github.io/en/"
-                />
-  </url><url>
     <loc>https://coderfamer.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -51,6 +34,23 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://coderfamer.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://coderfamer.github.io/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://coderfamer.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://coderfamer.github.io/ar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://coderfamer.github.io/en/"
                 />
   </url>
 </urlset>

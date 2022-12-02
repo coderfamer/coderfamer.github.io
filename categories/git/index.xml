@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>git on 演示站点</title>
+        <title>git on 木又</title>
         <link>https://coderfamer.github.io/categories/git/</link>
-        <description>Recent content in git on 演示站点</description>
+        <description>Recent content in git on 木又</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
         <lastBuildDate>Sun, 29 Aug 2021 15:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
