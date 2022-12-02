@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>wireguard on My New Hugo Site</title>
-    <link>https://coderfamer.github.io/tags/wireguard/</link>
-    <description>Recent content in wireguard on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 02 Nov 2021 20:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/tags/wireguard/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>常用软件清单</title>
-      <link>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
-      <pubDate>Tue, 02 Nov 2021 20:07:32 +0000</pubDate>
-      
-      <guid>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
-      <description>文件浏览器 xyplorer directory opus total comman</description>
-    </item>
-    
-    <item>
-      <title>wireguard 配置</title>
-      <link>https://coderfamer.github.io/posts/software/wireguard/command/</link>
-      <pubDate>Thu, 06 May 2021 20:07:32 +0000</pubDate>
-      
-      <guid>https://coderfamer.github.io/posts/software/wireguard/command/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>wireguard on My New Hugo Site</title>
+        <link>https://coderfamer.github.io/tags/wireguard/</link>
+        <description>Recent content in wireguard on My New Hugo Site</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 02 Nov 2021 20:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/tags/wireguard/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>常用软件清单</title>
+        <link>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+        <pubDate>Tue, 02 Nov 2021 20:07:32 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+        <description>&lt;p&gt;文件浏览器
+xyplorer
+directory opus
+total comman&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>wireguard 配置</title>
+        <link>https://coderfamer.github.io/posts/software/wireguard/command/</link>
+        <pubDate>Thu, 06 May 2021 20:07:32 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/posts/software/wireguard/command/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
 </rss>

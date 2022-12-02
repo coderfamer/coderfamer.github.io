@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>git on My New Hugo Site</title>
-    <link>https://coderfamer.github.io/categories/git/</link>
-    <description>Recent content in git on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 29 Aug 2021 15:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>git describe 命令详解</title>
-      <link>https://coderfamer.github.io/posts/software/git/git_describe/</link>
-      <pubDate>Sun, 29 Aug 2021 15:07:32 +0000</pubDate>
-      
-      <guid>https://coderfamer.github.io/posts/software/git/git_describe/</guid>
-      <description>git describe 命令详解 git 获取最新的 tag 查找最近的tag
-git describe # 不需要后缀 git describe --abbrev=0 获取当前分支的tag
-git describe --abbrev=0 --tags 获取所有分支的tag
-git describe --tags `git rev-list --tags --max-count=1` </description>
-    </item>
-    
-  </channel>
+    <channel>
+        <title>git on My New Hugo Site</title>
+        <link>https://coderfamer.github.io/categories/git/</link>
+        <description>Recent content in git on My New Hugo Site</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 29 Aug 2021 15:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>git describe 命令详解</title>
+        <link>https://coderfamer.github.io/posts/software/git/git_describe/</link>
+        <pubDate>Sun, 29 Aug 2021 15:07:32 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/posts/software/git/git_describe/</guid>
+        <description>&lt;h1 id=&#34;git-describe-命令详解&#34;&gt;git describe 命令详解&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;git-获取最新的-tag&#34;&gt;git 获取最新的 tag&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;查找最近的tag&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git describe
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 不需要后缀&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git describe --abbrev&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;获取当前分支的tag&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git describe --abbrev&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; --tags
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;获取所有分支的tag&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git describe --tags &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;git rev-list --tags --max-count&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;1&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
 </rss>

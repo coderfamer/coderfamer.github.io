@@ -1,148 +1,199 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>cmake external 外部项目设置 runtime 路径 | My New Hugo Site</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
 ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
 后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
 配置 目录结构 代码 顶层 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main.">
-    <meta name="generator" content="Hugo 0.104.3" />
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &amp;#34;&amp;#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&amp;#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&amp;#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &amp;#34;${RUNTIME_OUTPUT_DIRECTORY}&amp;#34; ) main.'>
+<title>cmake external 外部项目设置 runtime 路径</title>
 
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
+<link rel='canonical' href='https://coderfamer.github.io/posts/software/spdlog/external_runtime/'>
 
-
-
-    
-    
-    
-      
-
-    
-
-    
-    
-    <meta property="og:title" content="cmake external 外部项目设置 runtime 路径" />
-<meta property="og:description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='cmake external 外部项目设置 runtime 路径'>
+<meta property='og:description' content='cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
 ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
 后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
 配置 目录结构 代码 顶层 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://coderfamer.github.io/posts/software/spdlog/external_runtime/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-03-06T23:07:32+00:00" />
-<meta property="article:modified_time" content="2022-03-06T23:07:32+00:00" />
-
-<meta itemprop="name" content="cmake external 外部项目设置 runtime 路径">
-<meta itemprop="description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
-ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
-后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
-配置 目录结构 代码 顶层 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main."><meta itemprop="datePublished" content="2022-03-06T23:07:32+00:00" />
-<meta itemprop="dateModified" content="2022-03-06T23:07:32+00:00" />
-<meta itemprop="wordCount" content="120">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="cmake external 外部项目设置 runtime 路径"/>
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &amp;#34;&amp;#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&amp;#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&amp;#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &amp;#34;${RUNTIME_OUTPUT_DIRECTORY}&amp;#34; ) main.'>
+<meta property='og:url' content='https://coderfamer.github.io/posts/software/spdlog/external_runtime/'>
+<meta property='og:site_name' content='My New Hugo Site'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2022-03-06T23:07:32&#43;00:00'/><meta property='article:modified_time' content='2022-03-06T23:07:32&#43;00:00'/>
+<meta name="twitter:title" content="cmake external 外部项目设置 runtime 路径">
 <meta name="twitter:description" content="cmake external 外部项目超级构建设置 runtime 路径 简介 在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。
 ExternalProject_Add 参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。
 后参阅 cmake 文档，发现 ExternalProject_Add 中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径
 配置 目录结构 代码 顶层 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &#34;&#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
-cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &#34;${RUNTIME_OUTPUT_DIRECTORY}&#34; ) main."/>
+cmake_minimum_required(VERSION 3.5) project(demo LANGUAGES CXX) set_property(DIRECTORY PROPERTY EP_BASE ${CMAKE_BINARY_DIR}/subprojects) set(STAGED_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/stage) include(ExternalProject) ExternalProject_Add( log SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CMAKE_ARGS -DRUNTIME_OUTPUT_DIRECTORY=${PROJECT_SOURCE_DIR}/run BUILD_ALWAYS 1 INSTALL_COMMAND &amp;#34;&amp;#34; ) CMAKE_ARGS 添加 runtime 参数 src 目录中 CMakeLists.txt 内容
+cmake_minimum_required(VERSION 3.5) project(demo_core LANGUAGES CXX) add_executable(core main.cpp) message(&amp;#34;=========================${RUNTIME_OUTPUT_DIRECTORY}&amp;#34;) set_target_properties(core PROPERTIES RUNTIME_OUTPUT_DIRECTORY &amp;#34;${RUNTIME_OUTPUT_DIRECTORY}&amp;#34; ) main.">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-	
-  </head>
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-  <body class="ma0 avenir bg-near-white">
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_huda2458f72ce188392d75c5d51cd8e24e_373_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">My New Hugo Site</a></h1>
+            <h2 class="site-description"></h2>
+        </div>
+    </header><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
 
     
-   
-  
 
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        My New Hugo Site
-      
-    </a>
-    <div class="flex-l items-center">
-      
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
 
-      
-      
-<div class="ananke-socials">
-  
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/posts/software/spdlog/external_runtime/">cmake external 外部项目设置 runtime 路径</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 06, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    1 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
 </div>
 
-    </div>
-  </div>
-</nav>
+</header>
 
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked">
-          
-        POSTS
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
+    <section class="article-content">
     
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">cmake external 外部项目设置 runtime 路径</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2022-03-06T23:07:32Z">March 6, 2022</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="cmake-external-外部项目超级构建设置-runtime-路径">cmake external 外部项目超级构建设置 runtime 路径</h1>
+    
+    <h1 id="cmake-external-外部项目超级构建设置-runtime-路径">cmake external 外部项目超级构建设置 runtime 路径</h1>
 <h2 id="简介">简介</h2>
 <p>在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。</p>
 <p>ExternalProject_Add  参数中有一个 BINARY_DIR 选项可以指定输出路径，在构建的过程中，发现这个参数输出路径不仅会包含编译的二进制文件，还会把 cmake 自身产生的一些二进制文件同时包含进去。</p>
 <p>后参阅 cmake 文档，发现 ExternalProject_Add  中的 CMAKE_ARGS 选项和 set_target_properties 搭配可仅仅指定编译的二进制文件输出到指定路径</p>
 <h2 id="配置">配置</h2>
 <h3 id="目录结构">目录结构</h3>
-<p><img src="J:%5C01_note%5C00_hugo_blog%5Cimages%5Cspdlog_runtime_tree.png" alt=""></p>
+<p><img src="/J:%5c01_note%5c00_hugo_blog%5cimages%5cspdlog_runtime_tree.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
 <h3 id="代码">代码</h3>
 <p>顶层 CMakeLists.txt 内容</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmake" data-lang="cmake"><span style="display:flex;"><span>cmake_minimum_required(<span style="color:#e6db74">VERSION</span> <span style="color:#e6db74">3.5</span>)<span style="color:#960050;background-color:#1e0010">
@@ -193,44 +244,162 @@ src 目录中 CMakeLists.txt 内容</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mkdir  build <span style="color:#f92672">&amp;&amp;</span> cd build
 </span></span><span style="display:flex;"><span>cmake ..
 </span></span><span style="display:flex;"><span>make
-</span></span></code></pre></div><p><img src="J:%5C01_note%5C00_hugo_blog%5Cimages%5Cspdlog_runtime_build.png" alt=""></p>
+</span></span></code></pre></div><p><img src="/J:%5c01_note%5c00_hugo_blog%5cimages%5cspdlog_runtime_build.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
 <h3 id="产出目录结构和运行">产出目录结构和运行</h3>
-<p><img src="J:%5C01_note%5C00_hugo_blog%5Cimages%5Cspdlog_runtime_run.png" alt=""></p>
+<p><img src="/J:%5c01_note%5c00_hugo_blog%5cimages%5cspdlog_runtime_run.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
 <h2 id="引用">引用</h2>
-<p><a href="https://cmake.org/cmake/help/v3.23/module/ExternalProject.html#id3">ExternalProject — CMake 3.23.0-rc2 Documentation</a></p>
-<p><a href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#runtime-output-artifacts">cmake-buildsystem(7) — CMake 3.23.0-rc2 Documentation</a></p>
-<p><a href="https://stackoverflow.com/questions/34011381/cmake-set-cmake-runtime-output-directory-for-a-specific-target-only">CMake set CMAKE_RUNTIME_OUTPUT_DIRECTORY for a specific target only - Stack Overflow</a></p>
-<ul class="pa0">
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
+<p><a class="link" href="https://cmake.org/cmake/help/v3.23/module/ExternalProject.html#id3"  target="_blank" rel="noopener"
+    >ExternalProject — CMake 3.23.0-rc2 Documentation</a></p>
+<p><a class="link" href="https://cmake.org/cmake/help/latest/manual/cmake-buildsystem.7.html#runtime-output-artifacts"  target="_blank" rel="noopener"
+    >cmake-buildsystem(7) — CMake 3.23.0-rc2 Documentation</a></p>
+<p><a class="link" href="https://stackoverflow.com/questions/34011381/cmake-set-cmake-runtime-output-directory-for-a-specific-target-only"  target="_blank" rel="noopener"
+    >CMake set CMAKE_RUNTIME_OUTPUT_DIRECTORY for a specific target only - Stack Overflow</a></p>
 
-    <aside class="w-30-l mt6-l">
+</section>
 
 
+    <footer class="article-footer">
+    
+
+    </footer>
 
 
-</aside>
+    
+</article>
 
-  </article>
+    
 
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://coderfamer.github.io/" >
-    &copy;  My New Hugo Site 2022 
-  </a>
-    <div>
-<div class="ananke-socials">
-  
-</div>
-</div>
-  </div>
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 My New Hugo Site
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
 </footer>
 
-  </body>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
 </html>
