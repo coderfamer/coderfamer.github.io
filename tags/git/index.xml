@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>git on Example Site</title>
+        <title>git on 演示站点</title>
         <link>https://coderfamer.github.io/tags/git/</link>
-        <description>Recent content in git on Example Site</description>
+        <description>Recent content in git on 演示站点</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>zh-CN</language>
         <lastBuildDate>Tue, 08 Mar 2022 15:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>git 基于某个分支重新构建项目</title>
-        <link>https://coderfamer.github.io/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
+        <link>https://coderfamer.github.io/p/git-%E5%9F%BA%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E9%87%8D%E6%96%B0%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Tue, 08 Mar 2022 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
+        <guid>https://coderfamer.github.io/p/git-%E5%9F%BA%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E9%87%8D%E6%96%B0%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
         <description>&lt;h1 id=&#34;git-基于某个分支重建项目&#34;&gt;git 基于某个分支重建项目&lt;/h1&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;项目中因为不同需求构建多分支，其中某个分支改动量较大，想要独立成一个业务项目，本文记录了相关操作&lt;/p&gt;

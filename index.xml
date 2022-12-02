@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Example Site</title>
+        <title>演示站点</title>
         <link>https://coderfamer.github.io/</link>
-        <description>Recent content on Example Site</description>
+        <description>Recent content on 演示站点</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>zh-CN</language>
         <lastBuildDate>Fri, 02 Dec 2022 00:20:59 +0800</lastBuildDate><atom:link href="https://coderfamer.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Hugo</title>
-        <link>https://coderfamer.github.io/posts/hugo/</link>
+        <link>https://coderfamer.github.io/p/hugo/</link>
         <pubDate>Fri, 02 Dec 2022 00:20:59 +0800</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/hugo/</guid>
+        <guid>https://coderfamer.github.io/p/hugo/</guid>
         <description>&lt;h1 id=&#34;hugo-安装和使用&#34;&gt;hugo 安装和使用&lt;/h1&gt;
 &lt;h2 id=&#34;hugo-安装&#34;&gt;hugo 安装&lt;/h2&gt;
 &lt;h2 id=&#34;建立站点&#34;&gt;建立站点&lt;/h2&gt;
@@ -126,19 +126,19 @@
         </item>
         <item>
         <title>My First Post</title>
-        <link>https://coderfamer.github.io/posts/my-first-post/</link>
+        <link>https://coderfamer.github.io/p/my-first-post/</link>
         <pubDate>Fri, 02 Dec 2022 00:00:08 +0800</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/my-first-post/</guid>
+        <guid>https://coderfamer.github.io/p/my-first-post/</guid>
         <description>&lt;h2 id=&#34;first-post&#34;&gt;first post&lt;/h2&gt;
 </description>
         </item>
         <item>
         <title>centos7 离线安装 kubernets (k8s)</title>
-        <link>https://coderfamer.github.io/posts/software/kubernetes/00_k8s-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</link>
+        <link>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</link>
         <pubDate>Sat, 23 Apr 2022 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/kubernetes/00_k8s-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</guid>
+        <guid>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</guid>
         <description>&lt;h1 id=&#34;centos-7-离线安装-kubernets-k8s&#34;&gt;centos 7 离线安装 kubernets (k8s)&lt;/h1&gt;
 &lt;h2 id=&#34;下载离线安装包&#34;&gt;下载离线安装包&lt;/h2&gt;
 &lt;p&gt;准备一个可以连接外网的 centos7 机器，机器做好快照。&lt;/p&gt;
@@ -631,10 +631,10 @@
         </item>
         <item>
         <title>centos7 离线安装 kubernets (k8s)</title>
-        <link>https://coderfamer.github.io/posts/software/kubernetes/01_k8s%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90token/</link>
+        <link>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</link>
         <pubDate>Sat, 23 Apr 2022 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/kubernetes/01_k8s%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90token/</guid>
+        <guid>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</guid>
         <description>&lt;h1 id=&#34;k8s-重新生成-token&#34;&gt;k8s 重新生成 token&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;k8s 安装之后会自动生成一个有效期为 24h 的 token，超时之后就需要重新生成新的 token&lt;/p&gt;
@@ -679,10 +679,10 @@
         </item>
         <item>
         <title>windows 清除 samba 登录状态</title>
-        <link>https://coderfamer.github.io/posts/software/samba/windows-samba-%E6%B8%85%E9%99%A4%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/</link>
+        <link>https://coderfamer.github.io/p/windows-%E6%B8%85%E9%99%A4-samba-%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/</link>
         <pubDate>Mon, 14 Mar 2022 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/samba/windows-samba-%E6%B8%85%E9%99%A4%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/</guid>
+        <guid>https://coderfamer.github.io/p/windows-%E6%B8%85%E9%99%A4-samba-%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/</guid>
         <description>&lt;h1 id=&#34;windows-清除-samba-登录状态&#34;&gt;windows 清除 samba 登录状态&lt;/h1&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;windows 登录 samba 共享目录之后，会保存当前用户的缓存，每次访问之后就无需再次输入账户密码，想要使用其他账户就需要把当前账户状态清理掉&lt;/p&gt;
@@ -723,10 +723,10 @@
         </item>
         <item>
         <title>git 基于某个分支重新构建项目</title>
-        <link>https://coderfamer.github.io/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
+        <link>https://coderfamer.github.io/p/git-%E5%9F%BA%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E9%87%8D%E6%96%B0%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/</link>
         <pubDate>Tue, 08 Mar 2022 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
+        <guid>https://coderfamer.github.io/p/git-%E5%9F%BA%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E9%87%8D%E6%96%B0%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/</guid>
         <description>&lt;h1 id=&#34;git-基于某个分支重建项目&#34;&gt;git 基于某个分支重建项目&lt;/h1&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;项目中因为不同需求构建多分支，其中某个分支改动量较大，想要独立成一个业务项目，本文记录了相关操作&lt;/p&gt;
@@ -806,10 +806,10 @@
         </item>
         <item>
         <title>cmake external 外部项目设置 runtime 路径</title>
-        <link>https://coderfamer.github.io/posts/software/spdlog/external_runtime/</link>
+        <link>https://coderfamer.github.io/p/cmake-external-%E5%A4%96%E9%83%A8%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-runtime-%E8%B7%AF%E5%BE%84/</link>
         <pubDate>Sun, 06 Mar 2022 23:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/spdlog/external_runtime/</guid>
+        <guid>https://coderfamer.github.io/p/cmake-external-%E5%A4%96%E9%83%A8%E9%A1%B9%E7%9B%AE%E8%AE%BE%E7%BD%AE-runtime-%E8%B7%AF%E5%BE%84/</guid>
         <description>&lt;h1 id=&#34;cmake-external-外部项目超级构建设置-runtime-路径&#34;&gt;cmake external 外部项目超级构建设置 runtime 路径&lt;/h1&gt;
 &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
 &lt;p&gt;在使用 cmake 超级构建的时候，想要指定二进制文件的输出路径。&lt;/p&gt;
@@ -971,10 +971,10 @@ src 目录中 CMakeLists.txt 内容&lt;/p&gt;
         </item>
         <item>
         <title>常用软件清单</title>
-        <link>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+        <link>https://coderfamer.github.io/p/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/</link>
         <pubDate>Tue, 02 Nov 2021 20:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+        <guid>https://coderfamer.github.io/p/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/</guid>
         <description>&lt;p&gt;文件浏览器
 xyplorer
 directory opus
@@ -983,10 +983,10 @@ total comman&lt;/p&gt;
         </item>
         <item>
         <title>git describe 命令详解</title>
-        <link>https://coderfamer.github.io/posts/software/git/git_describe/</link>
+        <link>https://coderfamer.github.io/p/git-describe-%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/</link>
         <pubDate>Sun, 29 Aug 2021 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/git/git_describe/</guid>
+        <guid>https://coderfamer.github.io/p/git-describe-%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/</guid>
         <description>&lt;h1 id=&#34;git-describe-命令详解&#34;&gt;git describe 命令详解&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;git-获取最新的-tag&#34;&gt;git 获取最新的 tag&lt;/h2&gt;
@@ -1026,10 +1026,10 @@ total comman&lt;/p&gt;
         </item>
         <item>
         <title>centos 7 配置 samba client</title>
-        <link>https://coderfamer.github.io/posts/software/samba/centos7%E9%85%8D%E7%BD%AEsambaclient/</link>
+        <link>https://coderfamer.github.io/p/centos-7-%E9%85%8D%E7%BD%AE-samba-client/</link>
         <pubDate>Thu, 26 Aug 2021 16:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/samba/centos7%E9%85%8D%E7%BD%AEsambaclient/</guid>
+        <guid>https://coderfamer.github.io/p/centos-7-%E9%85%8D%E7%BD%AE-samba-client/</guid>
         <description>&lt;h1 id=&#34;samba---如何配置-samba-客户端&#34;&gt;Samba - 如何配置 samba 客户端&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;SMB（Server Message Block）又称 CIFS(Common Internet File System),一种应用层网络传输协议。
@@ -1148,10 +1148,10 @@ total comman&lt;/p&gt;
         </item>
         <item>
         <title>git stash 命令 储藏修改</title>
-        <link>https://coderfamer.github.io/posts/software/git/git_stash_usage/</link>
+        <link>https://coderfamer.github.io/p/git-stash-%E5%91%BD%E4%BB%A4-%E5%82%A8%E8%97%8F%E4%BF%AE%E6%94%B9/</link>
         <pubDate>Tue, 18 May 2021 03:41:23 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/git/git_stash_usage/</guid>
+        <guid>https://coderfamer.github.io/p/git-stash-%E5%91%BD%E4%BB%A4-%E5%82%A8%E8%97%8F%E4%BF%AE%E6%94%B9/</guid>
         <description>&lt;h1 id=&#34;git-stash-命令-储藏修改&#34;&gt;git stash 命令 储藏修改&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
@@ -1201,18 +1201,18 @@ total comman&lt;/p&gt;
         </item>
         <item>
         <title>wireguard 配置</title>
-        <link>https://coderfamer.github.io/posts/software/wireguard/command/</link>
+        <link>https://coderfamer.github.io/p/wireguard-%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Thu, 06 May 2021 20:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/wireguard/command/</guid>
+        <guid>https://coderfamer.github.io/p/wireguard-%E9%85%8D%E7%BD%AE/</guid>
         <description></description>
         </item>
         <item>
         <title>xyplorer 访问 samba 时候拒绝访问</title>
-        <link>https://coderfamer.github.io/posts/software/samba/xyplorer%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AEsamba/</link>
+        <link>https://coderfamer.github.io/p/xyplorer-%E8%AE%BF%E9%97%AE-samba-%E6%97%B6%E5%80%99%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE/</link>
         <pubDate>Thu, 06 May 2021 20:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/samba/xyplorer%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AEsamba/</guid>
+        <guid>https://coderfamer.github.io/p/xyplorer-%E8%AE%BF%E9%97%AE-samba-%E6%97%B6%E5%80%99%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AE/</guid>
         <description>&lt;h1 id=&#34;xyplorer-访问-samba-时候拒绝访问&#34;&gt;xyplorer 访问 samba 时候拒绝访问&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;问题&#34;&gt;问题&lt;/h2&gt;
@@ -1227,11 +1227,19 @@ total comman&lt;/p&gt;
 </description>
         </item>
         <item>
+        <title>Archives</title>
+        <link>https://coderfamer.github.io/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/archives/</guid>
+        <description></description>
+        </item>
+        <item>
         <title></title>
-        <link>https://coderfamer.github.io/posts/software/spdlog/%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/</link>
+        <link>https://coderfamer.github.io/p/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/spdlog/%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/</guid>
+        <guid>https://coderfamer.github.io/p/</guid>
         <description>&lt;p&gt;1 直接头文件引用&lt;/p&gt;
 &lt;p&gt;2 静态库引用&lt;/p&gt;
 &lt;p&gt;3 系统安装引用  find_package&lt;/p&gt;
@@ -1240,6 +1248,58 @@ total comman&lt;/p&gt;
 &lt;p&gt;安装教程&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://spdlog.docsforge.com/v1.x/9.cmake/#generate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;9. CMake - Spdlog v1.x - DocsForge&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Links</title>
+        <link>https://coderfamer.github.io/links/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/links/</guid>
+        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
+&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://coderfamer.github.io/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/search/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>https://coderfamer.github.io/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
 </description>
         </item>
         

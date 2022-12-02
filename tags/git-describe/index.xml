@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>git describe on Example Site</title>
+        <title>git describe on 演示站点</title>
         <link>https://coderfamer.github.io/tags/git-describe/</link>
-        <description>Recent content in git describe on Example Site</description>
+        <description>Recent content in git describe on 演示站点</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>zh-CN</language>
         <lastBuildDate>Sun, 29 Aug 2021 15:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/tags/git-describe/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>git describe 命令详解</title>
-        <link>https://coderfamer.github.io/posts/software/git/git_describe/</link>
+        <link>https://coderfamer.github.io/p/git-describe-%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/</link>
         <pubDate>Sun, 29 Aug 2021 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/git/git_describe/</guid>
+        <guid>https://coderfamer.github.io/p/git-describe-%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/</guid>
         <description>&lt;h1 id=&#34;git-describe-命令详解&#34;&gt;git describe 命令详解&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;git-获取最新的-tag&#34;&gt;git 获取最新的 tag&lt;/h2&gt;

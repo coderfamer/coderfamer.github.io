@@ -2,75 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://coderfamer.github.io/</loc>
-    <lastmod>2022-12-02T00:20:59+08:00</lastmod>
+    <loc>https://coderfamer.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://coderfamer.github.io/zh-cn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://coderfamer.github.io/ar/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://coderfamer.github.io/"
-                />
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/hugo/</loc>
-    <lastmod>2022-12-02T00:20:59+08:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/</loc>
-    <lastmod>2022-12-02T00:20:59+08:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/my-first-post/</loc>
-    <lastmod>2022-12-02T00:00:08+08:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/kubernetes/00_k8s-%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2022-04-23T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/kubernetes/01_k8s%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90token/</loc>
-    <lastmod>2022-04-23T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/samba/windows-samba-%E6%B8%85%E9%99%A4%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/</loc>
-    <lastmod>2022-03-14T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/tags/git/</loc>
-    <lastmod>2022-03-08T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/git/git%E5%9F%BA%E4%BA%8E%E5%88%86%E6%94%AF%E9%87%8D%E5%BB%BA%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2022-03-08T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/tags/</loc>
-    <lastmod>2022-03-08T15:07:32+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://coderfamer.github.io/zh-cn/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://coderfamer.github.io/ar/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://coderfamer.github.io/tags/"
-                />
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/spdlog/external_runtime/</loc>
-    <lastmod>2022-03-06T23:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/categories/</loc>
-    <lastmod>2021-11-02T20:07:32+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://coderfamer.github.io/zh-cn/categories/"
+                href="https://coderfamer.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -80,51 +16,41 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://coderfamer.github.io/categories/"
+                href="https://coderfamer.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://coderfamer.github.io/categories/software/</loc>
-    <lastmod>2021-11-02T20:07:32+00:00</lastmod>
+    <loc>https://coderfamer.github.io/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://coderfamer.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://coderfamer.github.io/ar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://coderfamer.github.io/en/"
+                />
   </url><url>
-    <loc>https://coderfamer.github.io/tags/wireguard/</loc>
-    <lastmod>2021-11-02T20:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/categories/wireguard/</loc>
-    <lastmod>2021-11-02T20:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</loc>
-    <lastmod>2021-11-02T20:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/categories/git/</loc>
-    <lastmod>2021-08-29T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/tags/git-describe/</loc>
-    <lastmod>2021-08-29T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/git/git_describe/</loc>
-    <lastmod>2021-08-29T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/samba/centos7%E9%85%8D%E7%BD%AEsambaclient/</loc>
-    <lastmod>2021-08-26T16:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/tags/samba/</loc>
-    <lastmod>2021-08-26T16:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/categories/samba/</loc>
-    <lastmod>2021-08-26T16:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/git/git_stash_usage/</loc>
-    <lastmod>2021-05-18T03:41:23+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/wireguard/command/</loc>
-    <lastmod>2021-05-06T20:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/tags/xyplorer/</loc>
-    <lastmod>2021-05-06T20:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/samba/xyplorer%E6%8B%92%E7%BB%9D%E8%AE%BF%E9%97%AEsamba/</loc>
-    <lastmod>2021-05-06T20:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/posts/software/spdlog/%E5%BC%95%E7%94%A8%E6%96%B9%E5%BC%8F/</loc>
+    <loc>https://coderfamer.github.io/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://coderfamer.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://coderfamer.github.io/ar/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://coderfamer.github.io/en/tags/"
+                />
   </url>
 </urlset>

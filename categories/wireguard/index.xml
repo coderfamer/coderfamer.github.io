@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>wireguard on Example Site</title>
+        <title>wireguard on 演示站点</title>
         <link>https://coderfamer.github.io/categories/wireguard/</link>
-        <description>Recent content in wireguard on Example Site</description>
+        <description>Recent content in wireguard on 演示站点</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
+        <language>zh-CN</language>
         <lastBuildDate>Tue, 02 Nov 2021 20:07:32 +0000</lastBuildDate><atom:link href="https://coderfamer.github.io/categories/wireguard/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>常用软件清单</title>
-        <link>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</link>
+        <link>https://coderfamer.github.io/p/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/</link>
         <pubDate>Tue, 02 Nov 2021 20:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/</guid>
+        <guid>https://coderfamer.github.io/p/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/</guid>
         <description>&lt;p&gt;文件浏览器
 xyplorer
 directory opus
@@ -20,10 +20,10 @@ total comman&lt;/p&gt;
         </item>
         <item>
         <title>wireguard 配置</title>
-        <link>https://coderfamer.github.io/posts/software/wireguard/command/</link>
+        <link>https://coderfamer.github.io/p/wireguard-%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Thu, 06 May 2021 20:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/posts/software/wireguard/command/</guid>
+        <guid>https://coderfamer.github.io/p/wireguard-%E9%85%8D%E7%BD%AE/</guid>
         <description></description>
         </item>
         
