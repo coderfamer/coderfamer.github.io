@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>cmake on 木又</title>
+        <link>https://coderfamer.github.io/categories/cmake/</link>
+        <description>Recent content in cmake on 木又</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <lastBuildDate>Mon, 12 Dec 2022 11:11:30 +0800</lastBuildDate><atom:link href="https://coderfamer.github.io/categories/cmake/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>cmake 使用 sphinx 构建文档系统</title>
+        <link>https://coderfamer.github.io/p/cmake-%E4%BD%BF%E7%94%A8-sphinx-%E6%9E%84%E5%BB%BA%E6%96%87%E6%A1%A3%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Mon, 12 Dec 2022 11:11:30 +0800</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/cmake-%E4%BD%BF%E7%94%A8-sphinx-%E6%9E%84%E5%BB%BA%E6%96%87%E6%A1%A3%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;h2 id=&#34;准备&#34;&gt;准备&lt;/h2&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

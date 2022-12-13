@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='centos7 安装nginx 先决条件 root权限56 selinux设置 安装步骤 step 1 更新存储库列表 1 sudo yum -y updatee step 2 从EPEL安装外部包 nginx不在centos标准库中，所以需要从EPEL中安装。首先安装EPEL
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='centos7 安装nginx 先决条件 root权限56 selinux设置 安装步骤 step 1 更新存储库列表 1 sudo yum -y update step 2 从EPEL安装外部包 nginx不在centos标准库中，所以需要从EPEL中安装。首先安装EPEL
 1 sudo yum -y install epel-release step3 安装nginx 命令 如下
 1 sudo yum -y install nginx step4 启动nginx 1 2 3 4 # 启动nginx systemctl start nginx # 查看nginx状态 systemctl status nginx step5 设置nginx开机自启动 1 systemctl enable nginx step6 配置防火墙 centos 7 默认开启防火墙，所以端口无法访问。可以选择关闭防火墙或者配置端口可访问
 方法一 关闭防火墙 1 2 3 4 # 关闭防火墙 systemctl stop firewalld # 关闭开机自启动 systemctl disable firewalld 方法二 开放端口 1 2 3 firewall-cmd --zone=public --permanent --add-service=http firewall-cmd --zone=public --permanent --add-service=https firewall-cmd reload step 7 检查nginx是否安装成功 查看nginx所在的主机的IP地址，打开浏览器在地址栏输入 http://ip ,如果出现含有 “Welcome to CentOS”的界面，说明nginx安装成功'>
@@ -10,7 +10,7 @@
 <link rel='canonical' href='https://coderfamer.github.io/p/centos7-%E5%AE%89%E8%A3%85nginx/'>
 
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='centos7 安装nginx'>
-<meta property='og:description' content='centos7 安装nginx 先决条件 root权限56 selinux设置 安装步骤 step 1 更新存储库列表 1 sudo yum -y updatee step 2 从EPEL安装外部包 nginx不在centos标准库中，所以需要从EPEL中安装。首先安装EPEL
+<meta property='og:description' content='centos7 安装nginx 先决条件 root权限56 selinux设置 安装步骤 step 1 更新存储库列表 1 sudo yum -y update step 2 从EPEL安装外部包 nginx不在centos标准库中，所以需要从EPEL中安装。首先安装EPEL
 1 sudo yum -y install epel-release step3 安装nginx 命令 如下
 1 sudo yum -y install nginx step4 启动nginx 1 2 3 4 # 启动nginx systemctl start nginx # 查看nginx状态 systemctl status nginx step5 设置nginx开机自启动 1 systemctl enable nginx step6 配置防火墙 centos 7 默认开启防火墙，所以端口无法访问。可以选择关闭防火墙或者配置端口可访问
 方法一 关闭防火墙 1 2 3 4 # 关闭防火墙 systemctl stop firewalld # 关闭开机自启动 systemctl disable firewalld 方法二 开放端口 1 2 3 firewall-cmd --zone=public --permanent --add-service=http firewall-cmd --zone=public --permanent --add-service=https firewall-cmd reload step 7 检查nginx是否安装成功 查看nginx所在的主机的IP地址，打开浏览器在地址栏输入 http://ip ,如果出现含有 “Welcome to CentOS”的界面，说明nginx安装成功'>
@@ -18,7 +18,7 @@
 <meta property='og:site_name' content='木又'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-12-23T16:07:32&#43;00:00'/><meta property='article:modified_time' content='2020-12-23T16:07:32&#43;00:00'/>
 <meta name="twitter:title" content="centos7 安装nginx">
-<meta name="twitter:description" content="centos7 安装nginx 先决条件 root权限56 selinux设置 安装步骤 step 1 更新存储库列表 1 sudo yum -y updatee step 2 从EPEL安装外部包 nginx不在centos标准库中，所以需要从EPEL中安装。首先安装EPEL
+<meta name="twitter:description" content="centos7 安装nginx 先决条件 root权限56 selinux设置 安装步骤 step 1 更新存储库列表 1 sudo yum -y update step 2 从EPEL安装外部包 nginx不在centos标准库中，所以需要从EPEL中安装。首先安装EPEL
 1 sudo yum -y install epel-release step3 安装nginx 命令 如下
 1 sudo yum -y install nginx step4 启动nginx 1 2 3 4 # 启动nginx systemctl start nginx # 查看nginx状态 systemctl status nginx step5 设置nginx开机自启动 1 systemctl enable nginx step6 配置防火墙 centos 7 默认开启防火墙，所以端口无法访问。可以选择关闭防火墙或者配置端口可访问
 方法一 关闭防火墙 1 2 3 4 # 关闭防火墙 systemctl stop firewalld # 关闭开机自启动 systemctl disable firewalld 方法二 开放端口 1 2 3 firewall-cmd --zone=public --permanent --add-service=http firewall-cmd --zone=public --permanent --add-service=https firewall-cmd reload step 7 检查nginx是否安装成功 查看nginx所在的主机的IP地址，打开浏览器在地址栏输入 http://ip ,如果出现含有 “Welcome to CentOS”的界面，说明nginx安装成功">
@@ -571,20 +571,37 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
-<center>
-<span id="busuanzi_container_site_pv"> 
-    本站访客数 <span id="busuanzi_value_site_uv"></span>次 
-    <i><i class="fa fa-spinner fa-spin"></i>
-</span>
-<span id="busuanzi_container_site_pv"> 
-    本站访问总量 <span id="busuanzi_value_site_pv"></span>次
-</span>
+<script>
+    function color_tags() {
+        var colorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999"];
+        $('.tagCloud-tags a').each(function () {
+            try {
+                tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+                $(this).css("background", tagsColor);
+            }
+            catch (err) { }
+        });
+    }
 
-<span id="busuanzi_container_page_pv"> 
-    本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
-</span>
-<center>
+    $(document).ready(function () {
+        color_tags()
+    });
+</script>
 
+
+<center>
+    <span id="busuanzi_container_site_pv">
+        本站访客数 <span id="busuanzi_value_site_uv"></span>次
+        <i><i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span id="busuanzi_container_site_pv">
+        本站访问总量 <span id="busuanzi_value_site_pv"></span>次
+    </span>
+
+    <span id="busuanzi_container_page_pv">
+        本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
+    </span>
+    <center>
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -682,6 +699,8 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
+
 
     </body>
 </html>

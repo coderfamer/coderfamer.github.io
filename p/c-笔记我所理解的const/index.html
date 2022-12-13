@@ -16,7 +16,7 @@
 1 2 3 4 5 6 7 8 9 10 11 void const_reference() { int a = 20; const int &amp;amp; r = a; r&#43;&#43;; // error : 引用本身不可变 const int b = 20; const int &amp;amp; rb = b; b&#43;&#43;; // error: 引用对象不可变 rb&#43;&#43;; // error: 引用本身不可变 } const 修饰指针 const 对于指针修饰操作，可分为三种方式：修饰指针指向、修饰指针本身或同时修饰指针指向和本身'>
 <meta property='og:url' content='https://coderfamer.github.io/p/c-%E7%AC%94%E8%AE%B0%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84const/'>
 <meta property='og:site_name' content='木又'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-11-28T12:07:32&#43;00:00'/><meta property='article:modified_time' content='2020-11-28T12:07:32&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='const' /><meta property='article:published_time' content='2020-11-28T12:07:32&#43;00:00'/><meta property='article:modified_time' content='2020-11-28T12:07:32&#43;00:00'/>
 <meta name="twitter:title" content="c&#43;&#43;笔记：我所理解的const">
 <meta name="twitter:description" content="c&#43;&#43;笔记：我所理解的const 编写程序的时候，我们希望定义个变量，它的值不能被改变，为了满足这一需求，可以用const关键词进行限定。const关键字可用于c&#43;&#43;各种环境：
 变量 引用和指针 函数参数和返回值 类成员变量 类成员函数 const修饰变量 当const修饰于变量时，其值不能改变。即在声明变量之后，不允许进行赋值操作
@@ -319,6 +319,14 @@
     <header class="article-header">
 
     <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/cpp/" >
+                cpp
+            </a>
+        
+    </header>
     
 
     <div class="article-title-wrapper">
@@ -754,6 +762,12 @@
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/const/">const</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
@@ -827,20 +841,37 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
-<center>
-<span id="busuanzi_container_site_pv"> 
-    本站访客数 <span id="busuanzi_value_site_uv"></span>次 
-    <i><i class="fa fa-spinner fa-spin"></i>
-</span>
-<span id="busuanzi_container_site_pv"> 
-    本站访问总量 <span id="busuanzi_value_site_pv"></span>次
-</span>
+<script>
+    function color_tags() {
+        var colorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999"];
+        $('.tagCloud-tags a').each(function () {
+            try {
+                tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+                $(this).css("background", tagsColor);
+            }
+            catch (err) { }
+        });
+    }
 
-<span id="busuanzi_container_page_pv"> 
-    本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
-</span>
-<center>
+    $(document).ready(function () {
+        color_tags()
+    });
+</script>
 
+
+<center>
+    <span id="busuanzi_container_site_pv">
+        本站访客数 <span id="busuanzi_value_site_uv"></span>次
+        <i><i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span id="busuanzi_container_site_pv">
+        本站访问总量 <span id="busuanzi_value_site_pv"></span>次
+    </span>
+
+    <span id="busuanzi_container_page_pv">
+        本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
+    </span>
+    <center>
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -938,6 +969,8 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
+
 
     </body>
 </html>

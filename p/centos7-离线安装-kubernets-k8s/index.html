@@ -20,7 +20,7 @@
 1 2 yum install -y docker-ce systemctl start docker 1 systemctl enable docker &amp;amp;&amp;amp; systemctl start docker k8s 包及相关镜像 k8s 安装包 导出 配置修改 yum 源 vim /etc/yum.'>
 <meta property='og:url' content='https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/'>
 <meta property='og:site_name' content='木又'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:tag' content='' /><meta property='article:published_time' content='2022-04-23T15:07:32&#43;00:00'/><meta property='article:modified_time' content='2022-04-23T15:07:32&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='k8s' /><meta property='article:tag' content='云存储' /><meta property='article:published_time' content='2022-04-23T15:07:32&#43;00:00'/><meta property='article:modified_time' content='2022-04-23T15:07:32&#43;00:00'/>
 <meta name="twitter:title" content="centos7 离线安装 kubernets (k8s)">
 <meta name="twitter:description" content="centos 7 离线安装 kubernets (k8s) 下载离线安装包 准备一个可以连接外网的 centos7 机器，机器做好快照。
 准备 安装必要程序
@@ -260,7 +260,79 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#下载离线安装包">下载离线安装包</a>
+      <ol>
+        <li><a href="#准备">准备</a></li>
+        <li><a href="#生成docker-安装包">生成docker 安装包</a>
+          <ol>
+            <li><a href="#更新-docker-源">更新 docker 源</a></li>
+            <li><a href="#导出并安装">导出并安装</a></li>
+          </ol>
+        </li>
+        <li><a href="#k8s-包及相关镜像">k8s 包及相关镜像</a>
+          <ol>
+            <li><a href="#k8s-安装包-导出">k8s 安装包 导出</a></li>
+            <li><a href="#k8s-相关镜像导出">k8s 相关镜像导出</a></li>
+            <li><a href="#下载网络插件">下载网络插件</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#安装-k8s">安装 k8s</a>
+      <ol>
+        <li><a href="#准备操作">准备操作</a></li>
+        <li><a href="#安装-docker">安装 docker</a></li>
+        <li><a href="#安装-k8s-1">安装 k8s</a></li>
+      </ol>
+    </li>
+    <li><a href="#安装-master-节点-以及-node-加入集群">安装 master 节点 以及 node 加入集群</a>
+      <ol>
+        <li><a href="#master-节点">master 节点</a>
+          <ol>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#配置网络插件">配置网络插件</a></li>
+          </ol>
+        </li>
+        <li><a href="#node-节点加入集群">node 节点加入集群</a>
+          <ol>
+            <li><a href="#更改-hostname">更改 hostname</a></li>
+            <li><a href="#加入集群">加入集群</a></li>
+          </ol>
+        </li>
+        <li><a href="#下载-kubernets-的相关镜像">下载 Kubernets 的相关镜像</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -269,6 +341,10 @@
     <div class="article-details">
     
     <header class="article-category">
+        
+            <a href="/categories/software/" >
+                software
+            </a>
         
     </header>
     
@@ -327,53 +403,505 @@
     <section class="article-content">
     
     
-    <h1 id="k8s-重新生成-token">k8s 重新生成 token</h1>
+    <h1 id="centos-7-离线安装-kubernets-k8s">centos 7 离线安装 kubernets (k8s)</h1>
+<h2 id="下载离线安装包">下载离线安装包</h2>
+<p>准备一个可以连接外网的 centos7 机器，机器做好快照。</p>
+<h3 id="准备">准备</h3>
+<p>安装必要程序</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install yum-utils
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="生成docker-安装包">生成docker 安装包</h3>
+<p>因需要 docker 程序拉取 k8s 的相关镜像，测试机需要安装 docker</p>
+<h4 id="更新-docker-源">更新 docker 源</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install -y epel-release.noarch
+</span></span><span class="line"><span class="cl">yum-config-manager --add-repo<span class="o">=</span>https://download.docker.com/linux/centos/docker-ce.repo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="导出并安装">导出并安装</h4>
+<p>导出 docker 安装包和其依赖包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir docker <span class="o">&amp;&amp;</span> <span class="nb">cd</span> docker
+</span></span><span class="line"><span class="cl">yumdownloader --resolve docker ce
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/images/k8s_00_docker.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>安装并启动 docker</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install -y docker-ce 
+</span></span><span class="line"><span class="cl">systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span> systemctl start docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="k8s-包及相关镜像">k8s 包及相关镜像</h3>
+<h4 id="k8s-安装包-导出">k8s 安装包 导出</h4>
+<p>配置修改 yum 源
+<strong>vim /etc/yum.repos.d/kubernets.repo</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>kubernetes<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">name</span><span class="o">=</span>Kubernetes
+</span></span><span class="line"><span class="cl"><span class="nv">baseurl</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">repo_gpgcheck</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">gpgkey</span><span class="o">=</span>http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+</span></span><span class="line"><span class="cl">       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重新生成 repo 信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum clean all <span class="o">&amp;&amp;</span> yum makecache
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>离线下载安装包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yumdownlaoder --reslove kubelet kubeadm kubectl
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看安装包 ls
+<img src="/images/k8s_00_k8s.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h4 id="k8s-相关镜像导出">k8s 相关镜像导出</h4>
+<p>k8s 基本镜像如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">k8s.gcr.io/kube-apiserver:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/kube-controller-manager:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/kube-scheduler:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/kube-proxy:v1.23.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/pause:3.6
+</span></span><span class="line"><span class="cl">k8s.gcr.io/etcd:3.5.1-0
+</span></span><span class="line"><span class="cl">k8s.gcr.io/coredns/coredns:v1.8.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>docker  拉取所有镜像，并导出镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 拉取镜像、打标签、删除旧的镜像</span>
+</span></span><span class="line"><span class="cl">docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6
+</span></span><span class="line"><span class="cl">docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6 k8s.gcr.io/kube-apiserver:v1.23.6
+</span></span><span class="line"><span class="cl">docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:v1.23.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 导出镜像保存为 tar 包</span>
+</span></span><span class="line"><span class="cl">docker save -o kube-apiserver.tar k8s.gcr.io/kube-apiserver:v1.23.6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对所有的镜像执行类似操作，可以通过脚本解决
+将所有导出的 rpm 包和 tar 镜像打包保存备用。</p>
+<h4 id="下载网络插件">下载网络插件</h4>
+<h5 id="选择一">选择一</h5>
+<p>选用 Flannel 插件</p>
+<p><a class="link" href="https://github.com/flannel-io/flannel/releases"  target="_blank" rel="noopener"
+    >flannel</a></p>
+<p>下载 flanneld-v0.17.0-amd64.docker 文件备用</p>
+<h5 id="选择二">选择二</h5>
+<p>选用 calico 网络插件</p>
+<p><a class="link" href="https://projectcalico.docs.tigera.io/maintenance/clis/calicoctl/install#install-calicoctl-as-a-kubernetes-pod"  target="_blank" rel="noopener"
+    >calico</a></p>
+<p>下载网络插件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://docs.projectcalico.org/v3.20/manifests/calico.yaml
+</span></span><span class="line"><span class="cl">kubectl apply -f calico.yaml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>docker 会自动下载 calico 相关镜像
+<img src="/images/k8s_00_calico.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+导出，备用</p>
+<p>准备好的包大概如下
+<img src="/images/k8s_00-package-overview.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="overview"
+	
+	
+></p>
+<h2 id="安装-k8s">安装 k8s</h2>
 <hr>
-<p>k8s 安装之后会自动生成一个有效期为 24h 的 token，超时之后就需要重新生成新的 token</p>
-<h2 id="方法">方法</h2>
-<p><strong>生成 token</strong></p>
+<h3 id="准备操作">准备操作</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 关闭防火墙</span>
+</span></span><span class="line"><span class="cl">systemctl disalbe firewalld
+</span></span><span class="line"><span class="cl">systemctl stop firewalld
+</span></span><span class="line"><span class="cl"><span class="c1"># 关闭 selinux</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39;</span> /etc/sysconfig/selinux
+</span></span><span class="line"><span class="cl">setenforce <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 禁用 swap 分区</span>
+</span></span><span class="line"><span class="cl">swapoff -a  <span class="c1"># 临时禁用</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/.*swap.*/#&amp;/&#39;</span> /etc/fstab  <span class="c1">#永久禁用</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置 iptables 网桥参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF | tee  /etc/sysctl.d/k8s.conf
+</span></span></span><span class="line"><span class="cl"><span class="s">net.bridge.bridge-nf-call-ip6tables = 1
+</span></span></span><span class="line"><span class="cl"><span class="s">net.bridge.bridge-nf-call-iptables = 1
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sysctl --system
+</span></span><span class="line"><span class="cl">sysctl -a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-docker">安装 docker</h3>
+<p>拷贝保存好的 docker 相关 rpm 包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> docker
+</span></span><span class="line"><span class="cl">yum localinstall -y docker-ce
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改 docker 的 cgroup 驱动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF &gt; /etc/docker/daemon.json
+</span></span></span><span class="line"><span class="cl"><span class="s">{
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;exec-opts&#34;: [&#34;native.cgroupdriver=systemd&#34;],
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;log-driver&#34;: &#34;json-file&#34;,
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;log-opts&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="s">    &#34;max-size&#34;: &#34;100m&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">  },
+</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;storage-driver&#34;: &#34;overlay2&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">}
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动docker</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl daemon-reload
+</span></span><span class="line"><span class="cl">systemctl start docker
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-k8s-1">安装 k8s</h3>
+<p>拷贝 k8s 相关 rpm 包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> k8s
+</span></span><span class="line"><span class="cl">yum localinstall * --disableexcludes<span class="o">=</span>kubernetes
+</span></span><span class="line"><span class="cl">systemctl start kubelet
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> kubelet
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>加载 k8s 相关镜像
+拷贝相关镜像包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> images
+</span></span><span class="line"><span class="cl">find -type f -iname <span class="s2">&#34;*.tar&#34;</span> <span class="p">|</span> xargs -i docker load --input <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>加载 k8s 网络插件相关镜像</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> calico
+</span></span><span class="line"><span class="cl">find -type f -iname <span class="s2">&#34;*.tar&#34;</span> <span class="p">|</span> xargs -i docker load --input <span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-master-节点-以及-node-加入集群">安装 master 节点 以及 node 加入集群</h2>
+<h3 id="master-节点">master 节点</h3>
+<p>所有的准备工作已经就绪，运行 kuberadm init 命令即可意见安装 k8s 的 master 节点, kubeadm 安装过程不会初始化网络插件，安装网络插件对 kuberadm init 会有一定的参数要求。以 calico 为例，安装时候需要指定
+&ndash;pod-network-cidr=192.168.0.0/16</p>
+<h4 id="安装">安装</h4>
+<p>默认 hostname 可能为 localhost.localdomain，可以通过 <strong>hosntame</strong> 命令查看，需要修改 hostname 名称，防止后续添加 node 冲突</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置 hostname</span>
+</span></span><span class="line"><span class="cl">hostnamectl set-hostname k8s-master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装 master 节点</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm token create
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm init --pod-network-cidr<span class="o">=</span>192.168.0.0/16
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>获取ca证书 hash 值</strong></p>
+</div><p>安装成功之后，需要配置admin.conf,安装成功结尾处也会提示如何配置，同时需要保存输出最后一行的 join 命令
+<img src="/images/k8s_00-kubeadm-init.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>
+有两种方法可以配置 admin.config</p>
+<ul>
+<li>
+<p>非 root 用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 复制配置文件</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$HOME</span>/.kube
+</span></span><span class="line"><span class="cl">sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+</span></span><span class="line"><span class="cl">sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>root 用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置环境变量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KUBECONFIG</span><span class="o">=</span>/etc/kubernetes/admin.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>保存生成的 join 命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm join 192.168.0.20:6443 --token 96f70b.i1asdsfderoaiq5o <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--discovery-token-ca-cert-hash sha256:c2ada929e36dd048298adb438fdafdsab8f2a6e499911fa09fce26
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="配置网络插件">配置网络插件</h4>
+<p>到当前步骤， k8s 基本安装完成，但是节点依然是 NotReady 状态，这是因为还没有安装网络插件。
+拷贝事先准备好的的 calico.yml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt <span class="p">|</span> openssl rsa -pubin -outform der 2&gt;/dev/null <span class="p">|</span> openssl dgst -sha256 -hex <span class="p">|</span> sed <span class="s1">&#39;s/^.* //&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubectl apply -f calico.yml
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>** 查看 token **</p>
+</div><p>安装配置完成之后，等待片刻，再次查看节点状态。<strong>kubectl get nodes</strong>，可以看到状态已经变为 Ready 状态
+<img src="/images/k8s_00-node-status.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="node-节点加入集群">node 节点加入集群</h3>
+<p>node 节点安装配置除去 kuberadm init 和 网络插件配置之外，安装步骤基本一致（node 节点上也不用安装 kubectl）。</p>
+<h4 id="更改-hostname">更改 hostname</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm token list
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">hostnamectl set-hostname node1
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上述步骤完成之后就可以添加新的 node 节点到 master 了</p>
+</div><h4 id="加入集群">加入集群</h4>
+<p>使用 <strong>kubeadm join</strong> 加入集群，拷贝之前步骤中安装成功之后生成的 join 命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm join 192.168.0.20:6443 --token 96f70b.i1asdsfderoaiq5o <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	--discovery-token-ca-cert-hash sha256:c2ada929e36dd048298adb438fdafdsab8f2a6e499911fa09fce26
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>hostname</p>
+<p>selinux</p>
+<p>firewalld</p>
+<p>swapoff   -a</p>
+<h3 id="下载-kubernets-的相关镜像">下载 Kubernets 的相关镜像</h3>
+<p>查看所需镜像列表</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm join &lt;master_ip&gt;:6443 --token &lt;TOKEN&gt; --discovery-token-ca-cert-hash  share256:&lt;HASH&gt;
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">kubeadm config image list
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><p>kubeadm init &ndash;pod-network-cidr=192.168.0.0/16</p>
+
 </section>
 
 
     <footer class="article-footer">
     
     <section class="article-tags">
+        
+            <a href="/tags/k8s/">k8s</a>
+        
+            <a href="/tags/%E4%BA%91%E5%AD%98%E5%82%A8/">云存储</a>
         
     </section>
 
@@ -407,12 +935,12 @@
             
                 
 <article class="">
-    <a href="/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/">
+    <a href="/p/sphinx-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">centos7 离线安装 kubernets (k8s)</h2>
+            <h2 class="article-title">Sphinx 安装使用</h2>
         </div>
     </a>
 </article>
@@ -420,12 +948,12 @@
             
                 
 <article class="">
-    <a href="/p/windows-%E6%B8%85%E9%99%A4-samba-%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/">
+    <a href="/p/vscode-remote-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">windows 清除 samba 登录状态</h2>
+            <h2 class="article-title">vscode remote 离线安装</h2>
         </div>
     </a>
 </article>
@@ -433,12 +961,38 @@
             
                 
 <article class="">
-    <a href="/p/git-%E5%9F%BA%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E9%87%8D%E6%96%B0%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/">
+    <a href="/p/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">git 基于某个分支重新构建项目</h2>
+            <h2 class="article-title">常用软件清单</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/centos-7-%E9%85%8D%E7%BD%AE-samba-client/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">centos 7 配置 samba client</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/wireguard-%E9%85%8D%E7%BD%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">wireguard 配置</h2>
         </div>
     </a>
 </article>
@@ -498,20 +1052,37 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
-<center>
-<span id="busuanzi_container_site_pv"> 
-    本站访客数 <span id="busuanzi_value_site_uv"></span>次 
-    <i><i class="fa fa-spinner fa-spin"></i>
-</span>
-<span id="busuanzi_container_site_pv"> 
-    本站访问总量 <span id="busuanzi_value_site_pv"></span>次
-</span>
+<script>
+    function color_tags() {
+        var colorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999"];
+        $('.tagCloud-tags a').each(function () {
+            try {
+                tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+                $(this).css("background", tagsColor);
+            }
+            catch (err) { }
+        });
+    }
 
-<span id="busuanzi_container_page_pv"> 
-    本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
-</span>
-<center>
+    $(document).ready(function () {
+        color_tags()
+    });
+</script>
 
+
+<center>
+    <span id="busuanzi_container_site_pv">
+        本站访客数 <span id="busuanzi_value_site_uv"></span>次
+        <i><i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span id="busuanzi_container_site_pv">
+        本站访问总量 <span id="busuanzi_value_site_pv"></span>次
+    </span>
+
+    <span id="busuanzi_container_page_pv">
+        本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
+    </span>
+    <center>
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -609,6 +1180,8 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
+
 
     </body>
 </html>

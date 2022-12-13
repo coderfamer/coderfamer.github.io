@@ -10,7 +10,7 @@
 <meta property='og:description' content='演示说明'>
 <meta property='og:url' content='https://coderfamer.github.io/post/'>
 <meta property='og:site_name' content='木又'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2022-12-02T00:20:59&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2022-12-12T11:11:30&#43;08:00 '/>
 <meta name="twitter:title" content="Posts">
 <meta name="twitter:description" content="演示说明"><link rel="alternate" type="application/rss&#43;xml" href="https://coderfamer.github.io/post/index.xml">
     </head>
@@ -288,7 +288,7 @@
                     <a href="/archives/#2022">
                         
                             <span class="year">2022</span>
-                            <span class="count">12</span>
+                            <span class="count">14</span>
                         
                     </a> 
                 </div>
@@ -304,7 +304,7 @@
                     <a href="/archives/#2020">
                         
                             <span class="year">2020</span>
-                            <span class="count">6</span>
+                            <span class="count">5</span>
                         
                     </a> 
                 </div>
@@ -312,7 +312,7 @@
                     <a href="/archives/#0001">
                         
                             <span class="year">0001</span>
-                            <span class="count">12</span>
+                            <span class="count">13</span>
                         
                     </a> 
                 </div>
@@ -339,7 +339,7 @@
 
     <div class="tagCloud-tags">
         
-            <a href="/categories/software/" class="font_size_5">
+            <a href="/categories/software/" class="font_size_8">
                 software
             </a>
         
@@ -363,8 +363,20 @@
                 c
             </a>
         
+            <a href="/categories/cmake/" class="font_size_1">
+                cmake
+            </a>
+        
+            <a href="/categories/cpp/" class="font_size_1">
+                cpp
+            </a>
+        
             <a href="/categories/shell/" class="font_size_1">
                 shell
+            </a>
+        
+            <a href="/categories/vscode/" class="font_size_1">
+                vscode
             </a>
         
     </div>
@@ -388,8 +400,16 @@
 
     <div class="tagCloud-tags">
         
+            <a href="/tags/git/" class="font_size_2">
+                git
+            </a>
+        
             <a href="/tags/samba/" class="font_size_2">
                 samba
+            </a>
+        
+            <a href="/tags/sphinx/" class="font_size_2">
+                sphinx
             </a>
         
             <a href="/tags/utf-8/" class="font_size_2">
@@ -400,8 +420,8 @@
                 wireguard
             </a>
         
-            <a href="/tags/git/" class="font_size_1">
-                git
+            <a href="/tags/const/" class="font_size_1">
+                const
             </a>
         
             <a href="/tags/git-describe/" class="font_size_1">
@@ -412,20 +432,12 @@
                 git prune
             </a>
         
-            <a href="/tags/hugo/" class="font_size_1">
-                hugo
+            <a href="/tags/k8s/" class="font_size_1">
+                k8s
             </a>
         
             <a href="/tags/shell/" class="font_size_1">
                 shell
-            </a>
-        
-            <a href="/tags/strtok/" class="font_size_1">
-                strtok
-            </a>
-        
-            <a href="/tags/xyplorer/" class="font_size_1">
-                xyplorer
             </a>
         
     </div>
@@ -445,7 +457,7 @@
 
         <div class="section-card">
             <div class="section-details">
-                <h3 class="section-count">38 pages</h3>
+                <h3 class="section-count">40 pages</h3>
                 <h1 class="section-term">Posts</h1>
                 
             </div>
@@ -466,11 +478,11 @@
 </article>
         
             <article>
-    <a href="/p/">
+    <a href="/p/kvm-%E5%AE%89%E8%A3%85-webvirtmgr/">
         <div class="article-details">
-            <h2 class="article-title"></h2>
+            <h2 class="article-title">kvm 安装 webvirtmgr</h2>
             <footer class="article-time">
-                <time datetime='0001-01-01T00:00:00Z'>Jan 01, 0001</time>
+                <time datetime='2020-04-13T23:07:32Z'>Apr 13, 2020</time>
             </footer>
         </div>
     </a>
@@ -555,20 +567,37 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
-<center>
-<span id="busuanzi_container_site_pv"> 
-    本站访客数 <span id="busuanzi_value_site_uv"></span>次 
-    <i><i class="fa fa-spinner fa-spin"></i>
-</span>
-<span id="busuanzi_container_site_pv"> 
-    本站访问总量 <span id="busuanzi_value_site_pv"></span>次
-</span>
+<script>
+    function color_tags() {
+        var colorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999"];
+        $('.tagCloud-tags a').each(function () {
+            try {
+                tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+                $(this).css("background", tagsColor);
+            }
+            catch (err) { }
+        });
+    }
 
-<span id="busuanzi_container_page_pv"> 
-    本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
-</span>
-<center>
+    $(document).ready(function () {
+        color_tags()
+    });
+</script>
 
+
+<center>
+    <span id="busuanzi_container_site_pv">
+        本站访客数 <span id="busuanzi_value_site_uv"></span>次
+        <i><i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span id="busuanzi_container_site_pv">
+        本站访问总量 <span id="busuanzi_value_site_pv"></span>次
+    </span>
+
+    <span id="busuanzi_container_page_pv">
+        本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
+    </span>
+    <center>
 
             </main>
         </div>
@@ -588,6 +617,8 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
+
 
     </body>
 </html>

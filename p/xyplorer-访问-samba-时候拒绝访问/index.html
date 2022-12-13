@@ -434,38 +434,51 @@
             
                 
 <article class="">
+    <a href="/p/sphinx-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Sphinx 安装使用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/vscode-remote-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">vscode remote 离线安装</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">centos7 离线安装 kubernets (k8s)</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">常用软件清单</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/wireguard-%E9%85%8D%E7%BD%AE/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">wireguard 配置</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/shell-%E9%A2%9C%E8%89%B2%E8%AF%AD%E6%B3%95/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">shell 颜色语法</h2>
         </div>
     </a>
 </article>
@@ -525,20 +538,37 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
-<center>
-<span id="busuanzi_container_site_pv"> 
-    本站访客数 <span id="busuanzi_value_site_uv"></span>次 
-    <i><i class="fa fa-spinner fa-spin"></i>
-</span>
-<span id="busuanzi_container_site_pv"> 
-    本站访问总量 <span id="busuanzi_value_site_pv"></span>次
-</span>
+<script>
+    function color_tags() {
+        var colorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999"];
+        $('.tagCloud-tags a').each(function () {
+            try {
+                tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+                $(this).css("background", tagsColor);
+            }
+            catch (err) { }
+        });
+    }
 
-<span id="busuanzi_container_page_pv"> 
-    本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
-</span>
-<center>
+    $(document).ready(function () {
+        color_tags()
+    });
+</script>
 
+
+<center>
+    <span id="busuanzi_container_site_pv">
+        本站访客数 <span id="busuanzi_value_site_uv"></span>次
+        <i><i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span id="busuanzi_container_site_pv">
+        本站访问总量 <span id="busuanzi_value_site_pv"></span>次
+    </span>
+
+    <span id="busuanzi_container_page_pv">
+        本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
+    </span>
+    <center>
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -636,6 +666,8 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
+
 
     </body>
 </html>

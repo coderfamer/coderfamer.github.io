@@ -2,35 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://coderfamer.github.io/p/hugo/</loc>
-    <lastmod>2022-12-02T00:20:59+08:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/post/</loc>
-    <lastmod>2022-12-02T00:20:59+08:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/</loc>
-    <lastmod>2022-12-02T00:20:59+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://coderfamer.github.io/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ar"
-                href="https://coderfamer.github.io/ar/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://coderfamer.github.io/"
-                />
-  </url><url>
-    <loc>https://coderfamer.github.io/p/my-first-post/</loc>
-    <lastmod>2022-12-02T00:00:08+08:00</lastmod>
-  </url><url>
     <loc>https://coderfamer.github.io/categories/</loc>
-    <lastmod>2022-06-03T15:07:32+00:00</lastmod>
+    <lastmod>2022-12-12T11:11:30+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -47,11 +20,20 @@
                 href="https://coderfamer.github.io/categories/"
                 />
   </url><url>
-    <loc>https://coderfamer.github.io/p/centos7-clash-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
-    <lastmod>2022-06-03T15:07:32+00:00</lastmod>
+    <loc>https://coderfamer.github.io/categories/cmake/</loc>
+    <lastmod>2022-12-12T11:11:30+08:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/cmake-%E4%BD%BF%E7%94%A8-sphinx-%E6%9E%84%E5%BB%BA%E6%96%87%E6%A1%A3%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2022-12-12T11:11:30+08:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/post/</loc>
+    <lastmod>2022-12-12T11:11:30+08:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/tags/sphinx/</loc>
+    <lastmod>2022-12-12T11:11:30+08:00</lastmod>
   </url><url>
     <loc>https://coderfamer.github.io/tags/</loc>
-    <lastmod>2022-06-03T15:07:32+00:00</lastmod>
+    <lastmod>2022-12-12T11:11:30+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -68,6 +50,51 @@
                 href="https://coderfamer.github.io/tags/"
                 />
   </url><url>
+    <loc>https://coderfamer.github.io/</loc>
+    <lastmod>2022-12-12T11:11:30+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://coderfamer.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ar"
+                href="https://coderfamer.github.io/ar/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://coderfamer.github.io/"
+                />
+  </url><url>
+    <loc>https://coderfamer.github.io/categories/software/</loc>
+    <lastmod>2022-12-07T17:50:55+08:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/sphinx-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2022-12-07T17:50:55+08:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/hugo/</loc>
+    <lastmod>2022-12-02T00:20:59+08:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/tags/git/</loc>
+    <lastmod>2022-09-23T15:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA-svn-%E5%AD%98%E5%82%A8%E5%BA%93%E5%88%B0%E4%B8%80%E4%B8%AA-git-%E5%AD%98%E5%82%A8%E5%BA%93%E4%B8%AD/</loc>
+    <lastmod>2022-09-23T15:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/tags/vscode/</loc>
+    <lastmod>2022-06-06T15:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/categories/vscode/</loc>
+    <lastmod>2022-06-06T15:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/vscode-remote-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2022-06-06T15:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/centos7-clash-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</loc>
+    <lastmod>2022-06-03T15:07:32+00:00</lastmod>
+  </url><url>
     <loc>https://coderfamer.github.io/tags/utf-8/</loc>
     <lastmod>2022-06-03T15:07:32+00:00</lastmod>
   </url><url>
@@ -77,14 +104,17 @@
     <loc>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</loc>
     <lastmod>2022-04-23T15:07:32+00:00</lastmod>
   </url><url>
-    <loc>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</loc>
+    <loc>https://coderfamer.github.io/tags/k8s/</loc>
+    <lastmod>2022-04-23T15:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/k8s-%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90-token/</loc>
+    <lastmod>2022-04-23T15:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/tags/%E4%BA%91%E5%AD%98%E5%82%A8/</loc>
     <lastmod>2022-04-23T15:07:32+00:00</lastmod>
   </url><url>
     <loc>https://coderfamer.github.io/p/windows-%E6%B8%85%E9%99%A4-samba-%E7%99%BB%E5%BD%95%E7%8A%B6%E6%80%81/</loc>
     <lastmod>2022-03-14T15:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/tags/git/</loc>
-    <lastmod>2022-03-08T15:07:32+00:00</lastmod>
   </url><url>
     <loc>https://coderfamer.github.io/p/git-%E5%9F%BA%E4%BA%8E%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E9%87%8D%E6%96%B0%E6%9E%84%E5%BB%BA%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2022-03-08T15:07:32+00:00</lastmod>
@@ -98,14 +128,14 @@
     <loc>https://coderfamer.github.io/p/centos7-sr-iov-%E8%AE%BE%E7%BD%AE/</loc>
     <lastmod>2022-02-21T12:07:32+00:00</lastmod>
   </url><url>
+    <loc>https://coderfamer.github.io/tags/sr-iov/</loc>
+    <lastmod>2022-02-21T12:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/tags/%E8%99%9A%E6%8B%9F%E5%8C%96/</loc>
+    <lastmod>2022-02-21T12:07:32+00:00</lastmod>
+  </url><url>
     <loc>https://coderfamer.github.io/p/%E6%88%91%E6%98%AF%E6%A0%87%E9%A2%98/</loc>
     <lastmod>2022-02-09T17:20:03+08:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/p/test/</loc>
-    <lastmod>2022-02-09T17:11:40+08:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/categories/software/</loc>
-    <lastmod>2021-11-02T20:07:32+00:00</lastmod>
   </url><url>
     <loc>https://coderfamer.github.io/tags/wireguard/</loc>
     <lastmod>2021-11-02T20:07:32+00:00</lastmod>
@@ -164,16 +194,16 @@
     <loc>https://coderfamer.github.io/p/centos7-%E5%AE%89%E8%A3%85nginx/</loc>
     <lastmod>2020-12-23T16:07:32+00:00</lastmod>
   </url><url>
-    <loc>https://coderfamer.github.io/p/centos7-%E5%AE%89%E8%A3%85nginx/</loc>
-    <lastmod>2020-12-23T16:07:32+00:00</lastmod>
-  </url><url>
-    <loc>https://coderfamer.github.io/tags/hugo/</loc>
-    <lastmod>2020-12-23T16:07:32+00:00</lastmod>
-  </url><url>
     <loc>https://coderfamer.github.io/p/c-%E7%AC%94%E8%AE%B0enum/</loc>
     <lastmod>2020-11-28T12:07:32+00:00</lastmod>
   </url><url>
     <loc>https://coderfamer.github.io/p/c-%E7%AC%94%E8%AE%B0%E6%88%91%E6%89%80%E7%90%86%E8%A7%A3%E7%9A%84const/</loc>
+    <lastmod>2020-11-28T12:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/tags/const/</loc>
+    <lastmod>2020-11-28T12:07:32+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/categories/cpp/</loc>
     <lastmod>2020-11-28T12:07:32+00:00</lastmod>
   </url><url>
     <loc>https://coderfamer.github.io/p/kvm-%E5%AE%89%E8%A3%85-webvirtmgr/</loc>
@@ -187,6 +217,8 @@
   </url><url>
     <loc>https://coderfamer.github.io/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://coderfamer.github.io/p/</loc>
   </url><url>
     <loc>https://coderfamer.github.io/p/</loc>
   </url><url>

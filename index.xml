@@ -6,7 +6,113 @@
         <description>Recent content on 木又</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Fri, 02 Dec 2022 00:20:59 +0800</lastBuildDate><atom:link href="https://coderfamer.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 12 Dec 2022 11:11:30 +0800</lastBuildDate><atom:link href="https://coderfamer.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>cmake 使用 sphinx 构建文档系统</title>
+        <link>https://coderfamer.github.io/p/cmake-%E4%BD%BF%E7%94%A8-sphinx-%E6%9E%84%E5%BB%BA%E6%96%87%E6%A1%A3%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Mon, 12 Dec 2022 11:11:30 +0800</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/cmake-%E4%BD%BF%E7%94%A8-sphinx-%E6%9E%84%E5%BB%BA%E6%96%87%E6%A1%A3%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;h2 id=&#34;准备&#34;&gt;准备&lt;/h2&gt;
+</description>
+        </item>
+        <item>
+        <title>Sphinx 安装使用</title>
+        <link>https://coderfamer.github.io/p/sphinx-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Wed, 07 Dec 2022 17:50:55 +0800</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/sphinx-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</guid>
+        <description>&lt;hr&gt;
+&lt;p&gt;sphinx 文档构建系统&lt;/p&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;p&gt;为了防止环境混乱，建议使用 conda 创建新环境安装&lt;/p&gt;
+&lt;h3 id=&#34;依赖&#34;&gt;依赖&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;conda&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装-conda--并创建新环境&#34;&gt;安装 conda  并创建新环境&lt;/h3&gt;
+&lt;h4 id=&#34;安装-conda&#34;&gt;安装 conda&lt;/h4&gt;
+&lt;h4 id=&#34;创建新虚拟环境&#34;&gt;创建新虚拟环境&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda env create -n sphinx --no-default-packages --file&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;req.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda activate sphinx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;cat req.txt&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;python&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;3.8
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;conda 会创建一个只包含 python 和 pip 名为 &lt;strong&gt;sphinx&lt;/strong&gt; 的环境&lt;/p&gt;
+&lt;h4 id=&#34;安装-sphinx-以及-依赖&#34;&gt;安装 sphinx 以及 依赖&lt;/h4&gt;
+&lt;p&gt;安装 sphinx&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install sphinx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;若需要支持 markdown 和表格，安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install recommonmark 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install sphinx-markdown-tables
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;若需要生成 pdf&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install rst2pdf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;使用教程&#34;&gt;使用教程&lt;/h2&gt;
+&lt;p&gt;使用 &lt;strong&gt;sphinx-quickstart&lt;/strong&gt; 创建空白项目&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sphinx-quickstart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置相关属性，构建&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make html 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;build/html 目录会生成静态网页&lt;/p&gt;
+&lt;p&gt;sphinx-quickstart
+sphinx-build&lt;/p&gt;
+&lt;h2 id=&#34;引用&#34;&gt;引用&lt;/h2&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://sphinx-practise.readthedocs.io/zh_CN/latest/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;sphinx-practise.readthedocs.io&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Hugo</title>
         <link>https://coderfamer.github.io/p/hugo/</link>
         <pubDate>Fri, 02 Dec 2022 00:20:59 +0800</pubDate>
@@ -125,12 +231,132 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>My First Post</title>
-        <link>https://coderfamer.github.io/p/my-first-post/</link>
-        <pubDate>Fri, 02 Dec 2022 00:00:08 +0800</pubDate>
+        <title>合并多个 svn 存储库到一个 git 存储库中</title>
+        <link>https://coderfamer.github.io/p/%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA-svn-%E5%AD%98%E5%82%A8%E5%BA%93%E5%88%B0%E4%B8%80%E4%B8%AA-git-%E5%AD%98%E5%82%A8%E5%BA%93%E4%B8%AD/</link>
+        <pubDate>Fri, 23 Sep 2022 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/p/my-first-post/</guid>
-        <description>&lt;h2 id=&#34;first-post&#34;&gt;first post&lt;/h2&gt;
+        <guid>https://coderfamer.github.io/p/%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AA-svn-%E5%AD%98%E5%82%A8%E5%BA%93%E5%88%B0%E4%B8%80%E4%B8%AA-git-%E5%AD%98%E5%82%A8%E5%BA%93%E4%B8%AD/</guid>
+        <description>&lt;h1 id=&#34;合并多个-svn-存储库到一个-git-存储库中&#34;&gt;合并多个 svn 存储库到一个 git 存储库中&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;合并多个 svn 项目到一个存储库&lt;/p&gt;
+&lt;h2 id=&#34;步骤&#34;&gt;步骤&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在 git 上面创建新的git 仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 首先在 git 上创建一个新的仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir git_project &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; git_project
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add origin git@192.168.20.98:dpi_tools/ya_env.git &lt;span class=&#34;c1&#34;&gt;# 设置 git 仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add README.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;add README&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin master  &lt;span class=&#34;c1&#34;&gt;# 提交 READERME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用 git svn 检出 svn 项目&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git svn clone http://svn_server/svn/proj_a  proj_a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git svn clone http://svn_server/svn/proj_b  proj_b
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;git 目录添加检出的 svn 项目&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; git_project
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add proj_a ../proj_a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git remote add proe_b ../proj_b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull proj_a
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull proj_b
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;合并检出的项目&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git branch -avv  &lt;span class=&#34;c1&#34;&gt;# 查看新增的所有分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git merge remote/proj_a/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git merge remote/proj_b/master
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>vscode remote 离线安装</title>
+        <link>https://coderfamer.github.io/p/vscode-remote-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Mon, 06 Jun 2022 15:07:32 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/vscode-remote-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85/</guid>
+        <description>&lt;h1 id=&#34;vscode-remote-离线安装&#34;&gt;vscode remote 离线安装&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;内网环境下，想要使用 vscode 并远程到 linux 开发机器，需要手动下载&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装&lt;/h2&gt;
+&lt;h3 id=&#34;系统要求&#34;&gt;系统要求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;git 或者 ssh 客户端&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;windows-安装-vscode&#34;&gt;windows 安装 vscode&lt;/h3&gt;
+&lt;h4 id=&#34;安装-vscode&#34;&gt;安装 vscode&lt;/h4&gt;
+&lt;p&gt;自行下载安装 &lt;a class=&#34;link&#34; href=&#34;https://code.visualstudio.com/Download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;vscode&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装完毕之后，打开 vscode  &lt;strong&gt;help-&amp;gt;about&lt;/strong&gt; 查看版本信息，记录 commit&lt;/p&gt;
+&lt;h4 id=&#34;安装-remote-插件&#34;&gt;安装 remote 插件&lt;/h4&gt;
+&lt;p&gt;插件下载地址 &lt;a class=&#34;link&#34; href=&#34;https://marketplace.visualstudio.com/VSCode&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Extensions for Visual Studio family of products | Visual Studio Marketplace&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ms-vscode-remote.remote-containers-0.238.1.visx&lt;/li&gt;
+&lt;li&gt;ms-vscode-remote.remote-ssh-0.81.2022060215.vsix&lt;/li&gt;
+&lt;li&gt;ms-vscode-remote.remote-ssh-edit-0.80.0.vsix&lt;/li&gt;
+&lt;li&gt;ms-vscode-remote.remote-wsl-0.66.3.vsix&lt;/li&gt;
+&lt;li&gt;ms-vscode-remote.vscode-remote-extensionpack-0.21.0.vsix&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;侧边栏 &lt;strong&gt;Extensions图标-&amp;gt;侧边栏三个点(···)-&amp;gt;Install from VSIX&lt;/strong&gt; 本地离线安装插件&lt;/p&gt;
+&lt;h3 id=&#34;linux-安装-vscode&#34;&gt;linux 安装 vscode&lt;/h3&gt;
+&lt;p&gt;windows 和 linux 对应的 commit 是一样的，根据 commit 下载，例如 1.67.2 的 commit 是 &lt;strong&gt;c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://update.code.visualstudio.com/commit:c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/server-linux-x64/stable
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tar -zxvf stable    &lt;span class=&#34;c1&#34;&gt;# 解压后目录名为 vscode-server-linux-64 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.vscode-server/bin &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.vscode-server/bin
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv vscode-server-linux-64 &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;HOME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;拷贝 ssh 密钥到远程服务器，就可以远程连接了.其他插件自行安装&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -769,11 +995,11 @@ Country.mmdb（启动 clash 会自动下，建议手动下载）&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>centos7 离线安装 kubernets (k8s)</title>
-        <link>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</link>
+        <title>k8s 重新生成 token</title>
+        <link>https://coderfamer.github.io/p/k8s-%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90-token/</link>
         <pubDate>Sat, 23 Apr 2022 15:07:32 +0000</pubDate>
         
-        <guid>https://coderfamer.github.io/p/centos7-%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85-kubernets-k8s/</guid>
+        <guid>https://coderfamer.github.io/p/k8s-%E9%87%8D%E6%96%B0%E7%94%9F%E6%88%90-token/</guid>
         <description>&lt;h1 id=&#34;k8s-重新生成-token&#34;&gt;k8s 重新生成 token&lt;/h1&gt;
 &lt;hr&gt;
 &lt;p&gt;k8s 安装之后会自动生成一个有效期为 24h 的 token，超时之后就需要重新生成新的 token&lt;/p&gt;
@@ -1326,18 +1552,6 @@ src 目录中 CMakeLists.txt 内容&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Test</title>
-        <link>https://coderfamer.github.io/p/test/</link>
-        <pubDate>Wed, 09 Feb 2022 17:11:40 +0800</pubDate>
-        
-        <guid>https://coderfamer.github.io/p/test/</guid>
-        <description>&lt;h2 id=&#34;我是标题&#34;&gt;我是标题&lt;/h2&gt;
-&lt;h2 id=&#34;我是小标题&#34;&gt;我是小标题&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/henzhuanxin/article/details/109047195&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;(67条消息) Proxy CONNECT aborted_henzhuanxin的博客-CSDN博客&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>常用软件清单</title>
         <link>https://coderfamer.github.io/p/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E6%B8%85%E5%8D%95/</link>
         <pubDate>Tue, 02 Nov 2021 20:07:32 +0000</pubDate>
@@ -1686,141 +1900,6 @@ total comman&lt;/p&gt;
 &lt;p&gt;Tools -&amp;gt; 特殊工具 -&amp;gt; 映射网络驱动器
 任选一个盘符之后，输入 samba 创建的账户名即可&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>centos7 安装nginx</title>
-        <link>https://coderfamer.github.io/p/centos7-%E5%AE%89%E8%A3%85nginx/</link>
-        <pubDate>Wed, 23 Dec 2020 16:07:32 +0000</pubDate>
-        
-        <guid>https://coderfamer.github.io/p/centos7-%E5%AE%89%E8%A3%85nginx/</guid>
-        <description>&lt;h1 id=&#34;centos7-安装nginx&#34;&gt;centos7 安装nginx&lt;/h1&gt;
-&lt;h2 id=&#34;先决条件&#34;&gt;先决条件&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;root权限56&lt;/li&gt;
-&lt;li&gt;selinux设置&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;安装步骤&#34;&gt;安装步骤&lt;/h2&gt;
-&lt;h3 id=&#34;step-1-更新存储库列表&#34;&gt;step 1 更新存储库列表&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	sudo yum -y updatee
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;step-2-从epel安装外部包&#34;&gt;step 2 从EPEL安装外部包&lt;/h3&gt;
-&lt;p&gt;  nginx不在centos标准库中，所以需要从EPEL中安装。首先安装EPEL&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	sudo yum -y install epel-release
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;step3-安装nginx&#34;&gt;step3 安装nginx&lt;/h3&gt;
-&lt;p&gt;  命令 如下&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	sudo yum -y install nginx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;step4-启动nginx&#34;&gt;step4 启动nginx&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 启动nginx&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl start nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 查看nginx状态&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl status nginx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;step5-设置nginx开机自启动&#34;&gt;step5 设置nginx开机自启动&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; nginx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;step6-配置防火墙&#34;&gt;step6 配置防火墙&lt;/h3&gt;
-&lt;p&gt;  centos 7 默认开启防火墙，所以端口无法访问。可以选择关闭防火墙或者配置端口可访问&lt;/p&gt;
-&lt;h4 id=&#34;方法一--关闭防火墙&#34;&gt;方法一  关闭防火墙&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 关闭防火墙&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl stop firewalld
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 关闭开机自启动&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl disable firewalld
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;方法二--开放端口&#34;&gt;方法二  开放端口&lt;/h4&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	firewall-cmd --zone&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;public --permanent --add-service&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;http
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	firewall-cmd --zone&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;public --permanent --add-service&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	firewall-cmd reload
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;step-7-检查nginx是否安装成功&#34;&gt;step 7 检查nginx是否安装成功&lt;/h3&gt;
-&lt;p&gt;  查看nginx所在的主机的IP地址，打开浏览器在地址栏输入  http://ip ,如果出现含有 “Welcome to CentOS”的界面，说明nginx安装成功&lt;/p&gt;
-&lt;h3 id=&#34;nginx管理常用命令&#34;&gt;nginx管理常用命令&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 停止服务&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl stop nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 重启服务&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl restart nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 重新加载服务&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl relaod nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 启用/禁用开机自启动&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	systemctl enable/disable nginx
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 重启nginx&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	nginx -s reload
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 停止nginx&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	nginx -s stop
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;c1&#34;&gt;# 查看配置文件路径，并检测配置文件的正确性&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	nginx -t 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
         </item>
         <item>
         <title>centos7 安装nginx</title>
@@ -2874,6 +2953,42 @@ total comman&lt;/p&gt;
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://coderfamer.github.io/p/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://coderfamer.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://coderfamer.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/</guid>
+        <description>&lt;p&gt;1、左值、右值&lt;/p&gt;
+&lt;p&gt;2、右值引用&lt;/p&gt;
+&lt;p&gt;3、移动语义&lt;/p&gt;
+&lt;p&gt;4、move forward&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://coderfamer.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://coderfamer.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/</guid>
         <description>&lt;p&gt;conda  create -n demo&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2948,6 +3063,20 @@ total comman&lt;/p&gt;
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://coderfamer.github.io/p/</guid>
+        <description>&lt;p&gt;curl -fsSL &lt;a class=&#34;link&#34; href=&#34;https://rpm.nodesource.com/setup_14.x&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://rpm.nodesource.com/setup_14.x&lt;/a&gt; | sudo bash -&lt;/p&gt;
+&lt;p&gt;sudo yum install -y nodejs&lt;/p&gt;
+&lt;p&gt;nvm 安装&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.myfreax.com/how-to-install-node-js-on-centos-7/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;如何安装Node.js和npm在CentOS 7 | myfreax&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://coderfamer.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/</guid>
         <description></description>
         </item>
         <item>
@@ -2971,56 +3100,6 @@ total comman&lt;/p&gt;
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://coderfamer.github.io/p/</guid>
-        <description>&lt;p&gt;curl -fsSL &lt;a class=&#34;link&#34; href=&#34;https://rpm.nodesource.com/setup_14.x&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://rpm.nodesource.com/setup_14.x&lt;/a&gt; | sudo bash -&lt;/p&gt;
-&lt;p&gt;sudo yum install -y nodejs&lt;/p&gt;
-&lt;p&gt;nvm 安装&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.myfreax.com/how-to-install-node-js-on-centos-7/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;如何安装Node.js和npm在CentOS 7 | myfreax&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://coderfamer.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://coderfamer.github.io/p/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://coderfamer.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://coderfamer.github.io/p/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://coderfamer.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://coderfamer.github.io/p/</guid>
-        <description>&lt;p&gt;1、左值、右值&lt;/p&gt;
-&lt;p&gt;2、右值引用&lt;/p&gt;
-&lt;p&gt;3、移动语义&lt;/p&gt;
-&lt;p&gt;4、move forward&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://coderfamer.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://coderfamer.github.io/p/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title></title>
-        <link>https://coderfamer.github.io/p/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://coderfamer.github.io/p/</guid>
         <description>&lt;p&gt;1 直接头文件引用&lt;/p&gt;
 &lt;p&gt;2 静态库引用&lt;/p&gt;
 &lt;p&gt;3 系统安装引用  find_package&lt;/p&gt;
@@ -3029,6 +3108,16 @@ total comman&lt;/p&gt;
 &lt;p&gt;安装教程&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://spdlog.docsforge.com/v1.x/9.cmake/#generate&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;9. CMake - Spdlog v1.x - DocsForge&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://coderfamer.github.io/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://coderfamer.github.io/p/</guid>
+        <description>&lt;p&gt;&amp;ldquo;C_Cpp.intelliSenseEngineFallback&amp;rdquo;: &amp;ldquo;Disabled&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;C_Cpp.intelliSenseCacheSize&amp;rdquo;: 0&lt;/p&gt;
 </description>
         </item>
         <item>

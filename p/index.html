@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='conda create -n demo
-1 2 pip freeze &amp;gt; requirements.txt pip download -r requirements.txt 1 pip install --no-index --find-links=&amp;#34;.&amp;#34; -r requirements '>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''>
 <title></title>
 
 <link rel='canonical' href='https://coderfamer.github.io/p/'>
 
 <link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content=''>
-<meta property='og:description' content='conda create -n demo
-1 2 pip freeze &amp;gt; requirements.txt pip download -r requirements.txt 1 pip install --no-index --find-links=&amp;#34;.&amp;#34; -r requirements '>
+<meta property='og:description' content=''>
 <meta property='og:url' content='https://coderfamer.github.io/p/'>
 <meta property='og:site_name' content='木又'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="conda create -n demo
-1 2 pip freeze &amp;gt; requirements.txt pip download -r requirements.txt 1 pip install --no-index --find-links=&amp;#34;.&amp;#34; -r requirements ">
+<meta name="twitter:description" content="">
     </head>
     <body class="
     article-page
@@ -283,7 +280,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 0 分钟
                 </time>
             </div>
         
@@ -298,14 +295,8 @@
     <section class="article-content">
     
     
-    <p>1 直接头文件引用</p>
-<p>2 静态库引用</p>
-<p>3 系统安装引用  find_package</p>
-<p>优劣势</p>
-<p>find_package编译速度最快，静态库引用和头文件都比较慢，目前不清楚原因</p>
-<p>安装教程</p>
-<p><a class="link" href="https://spdlog.docsforge.com/v1.x/9.cmake/#generate"  target="_blank" rel="noopener"
-    >9. CMake - Spdlog v1.x - DocsForge</a></p>
+    <p>&ldquo;C_Cpp.intelliSenseEngineFallback&rdquo;: &ldquo;Disabled&rdquo;</p>
+<p>&ldquo;C_Cpp.intelliSenseCacheSize&rdquo;: 0</p>
 
 </section>
 
@@ -385,20 +376,37 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
-<center>
-<span id="busuanzi_container_site_pv"> 
-    本站访客数 <span id="busuanzi_value_site_uv"></span>次 
-    <i><i class="fa fa-spinner fa-spin"></i>
-</span>
-<span id="busuanzi_container_site_pv"> 
-    本站访问总量 <span id="busuanzi_value_site_pv"></span>次
-</span>
+<script>
+    function color_tags() {
+        var colorArr = ["#428BCA", "#AEDCAE", "#ECA9A7", "#DA99FF", "#FFB380", "#D9B999"];
+        $('.tagCloud-tags a').each(function () {
+            try {
+                tagsColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+                $(this).css("background", tagsColor);
+            }
+            catch (err) { }
+        });
+    }
 
-<span id="busuanzi_container_page_pv"> 
-    本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
-</span>
-<center>
+    $(document).ready(function () {
+        color_tags()
+    });
+</script>
 
+
+<center>
+    <span id="busuanzi_container_site_pv">
+        本站访客数 <span id="busuanzi_value_site_uv"></span>次
+        <i><i class="fa fa-spinner fa-spin"></i>
+    </span>
+    <span id="busuanzi_container_site_pv">
+        本站访问总量 <span id="busuanzi_value_site_pv"></span>次
+    </span>
+
+    <span id="busuanzi_container_page_pv">
+        本文总阅读量 <span id="busuanzi_value_page_pv"></span>次
+    </span>
+    <center>
 
     
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -496,6 +504,8 @@
         document.head.appendChild(customFont);
     }());
 </script>
+
+
 
     </body>
 </html>
